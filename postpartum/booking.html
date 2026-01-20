@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Portal | Postpartum Powerhouse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { DEFAULT: '#0A1A2F', light: '#162C46', dark: '#02060B' },
+                        gold: { DEFAULT: '#D4AF37', hover: '#B5952F' },
+                        slate: { DEFAULT: '#708090', light: '#E2E8F0', dim: '#94A3B8' }
+                    },
+                    fontFamily: { serif: ['Playfair Display', 'serif'], sans: ['Manrope', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel { background: rgba(10, 26, 47, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="bg-navy-dark text-slate-light font-sans antialiased min-h-screen flex flex-col">
+
+    <header class="fixed top-0 w-full z-50 transition-all duration-300 glass-panel">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-gold rounded-sm flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+                    <span class="text-navy font-serif font-bold text-lg">P</span>
+                </div>
+                <span class="font-serif text-white tracking-wider text-sm hidden sm:block">POSTPARTUM POWERHOUSE</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                <span class="text-[10px] uppercase tracking-widest text-slate-400">Applications Open</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-32 pb-20 px-6 relative flex items-center justify-center">
+        <div class="fixed inset-0 bg-[url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop')] bg-cover bg-center opacity-10 pointer-events-none"></div>
+
+        <div class="relative z-10 w-full max-w-6xl mx-auto grid lg:grid-cols-5 gap-12 h-full">
+            
+            <div class="lg:col-span-2 space-y-8 lg:pr-8 lg:border-r border-white/10">
+                <div>
+                    <h1 class="font-serif text-3xl text-white mb-2">Final Step: Candidacy Interview</h1>
+                    <p class="text-slate-400 text-sm">Select a time for your strategy session with our Clinical Director.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-navy border border-white/5 p-6 rounded-sm">
+                        <h3 class="text-gold text-xs uppercase tracking-widest font-bold mb-3">Call Protocol</h3>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex gap-3"><span class="text-gold">✓</span> Must be in a quiet place (No driving).</li>
+                            <li class="flex gap-3"><span class="text-gold">✓</span> Review the Briefing PDF before the call.</li>
+                            <li class="flex gap-3"><span class="text-gold">✓</span> Have your HRV/Health data ready if available.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-red-900/10 border border-red-500/20 p-6 rounded-sm">
+                        <h3 class="text-red-400 text-xs uppercase tracking-widest font-bold mb-3">Warning</h3>
+                        <p class="text-xs text-red-200/70 leading-relaxed">
+                            We have a strict no-show policy. Because these are deep-dive strategy calls (valued at $500), missing your appointment without 24h notice will result in a permanent ban from future cohorts.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hidden lg:block">
+                    <div class="flex items-center gap-4 mt-12 opacity-50">
+                        <div class="flex -space-x-3">
+                            <div class="w-8 h-8 rounded-full bg-slate-700 border border-navy"></div>
+                            <div class="w-8 h-8 rounded-full bg-slate-600 border border-navy"></div>
+                            <div class="w-8 h-8 rounded-full bg-slate-500 border border-navy"></div>
+                        </div>
+                        <p class="text-xs text-slate-400">Join 400+ Executives inside.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-3 bg-navy-light border border-white/10 rounded-sm shadow-2xl overflow-hidden min-h-[600px] flex items-center justify-center relative">
+                
+                <div class="text-center space-y-4">
+                    <div class="w-16 h-16 bg-navy border border-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <p class="text-slate-400 text-sm font-mono">[Calendar Widget Loads Here]</p>
+                    <p class="text-xs text-slate-600 max-w-xs mx-auto">This area would contain the iframe for Calendly, Cal.com, or GoHighLevel booking widget.</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

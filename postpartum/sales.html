@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Executive Protocol | Postpartum Powerhouse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { DEFAULT: '#0A1A2F', light: '#162C46', dark: '#02060B' },
+                        gold: { DEFAULT: '#D4AF37', hover: '#B5952F', dim: '#8a7020' },
+                        slate: { DEFAULT: '#708090', light: '#E2E8F0', dim: '#94A3B8' }
+                    },
+                    fontFamily: { serif: ['Playfair Display', 'serif'], sans: ['Manrope', 'sans-serif'] },
+                    boxShadow: { 'glow': '0 0 20px rgba(212, 175, 55, 0.15)' }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel { background: rgba(10, 26, 47, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .ui-bubble { position: relative; }
+        .ui-bubble::after { content: ''; position: absolute; bottom: 0; left: -10px; width: 20px; height: 20px; background: inherit; border-bottom-right-radius: 15px; z-index: -1; }
+    </style>
+</head>
+<body class="bg-navy-dark text-slate-light font-sans antialiased overflow-x-hidden">
+
+    <header class="fixed top-0 w-full z-50 transition-all duration-300 glass-panel">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-gold rounded-sm flex items-center justify-center shadow-glow">
+                    <span class="text-navy font-serif font-bold text-lg">P</span>
+                </div>
+                <span class="font-serif text-white tracking-wider text-sm hidden sm:block">POSTPARTUM POWERHOUSE</span>
+            </div>
+            <a href="booking.html" class="text-xs uppercase tracking-widest text-navy bg-gold border border-gold px-6 py-2.5 hover:bg-white transition-all duration-300 font-bold rounded-sm shadow-lg">Apply For Candidacy</a>
+        </div>
+    </header>
+
+    <section class="relative pt-32 pb-16 lg:pt-48 lg:pb-24 overflow-hidden text-center px-6">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-navy-dark via-navy/90 to-navy-dark"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-slate/20 bg-navy-light/50 backdrop-blur-md mb-8">
+                <span class="text-[10px] uppercase tracking-[0.2em] text-gold font-semibold">Confidential Protocol Briefing</span>
+            </div>
+            
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl leading-tight text-white mb-8">
+                The Executive <br>
+                <span class="text-gold italic">Postpartum Protocol™</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto mb-12">
+                The 90-Day Metabolic Reconstruction System for female founders who need to eliminate brain fog, repair core integrity, and command respect—without spending hours in a gym.
+            </p>
+
+            <div class="max-w-4xl mx-auto bg-navy border border-white/10 rounded-sm shadow-2xl overflow-hidden aspect-video relative group cursor-pointer" onclick="window.location.href='booking.html'">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center opacity-50"></div>
+                <div class="absolute inset-0 bg-navy/60"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gold/90 rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(212,175,55,0.3)] group-hover:scale-105 transition-transform duration-300">
+                    <svg class="w-10 h-10 text-navy ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+                <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-navy to-transparent text-left">
+                    <p class="text-white font-serif text-2xl">"The Science of Executive Recovery"</p>
+                    <p class="text-gold text-xs uppercase tracking-widest mt-1">Presented by Sarah Jenkins</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="border-y border-white/5 bg-navy py-8 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-center text-[10px] text-slate-500 uppercase tracking-widest mb-6">Protocols Trusted By Executives At</p>
+            <div class="flex flex-wrap justify-center gap-12 lg:gap-24 opacity-40 grayscale">
+                <span class="font-serif text-xl text-white">Goldman Sachs</span>
+                <span class="font-serif text-xl text-white">McKinsey&Co</span>
+                <span class="font-serif text-xl text-white">Google</span>
+                <span class="font-serif text-xl text-white">Sequoia</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-navy relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-gold text-xs uppercase tracking-widest font-bold">The Data</span>
+                <h2 class="font-serif text-3xl md:text-5xl text-white mt-4">We Don't Deal In Opinions.</h2>
+                <p class="text-slate-400 mt-4">We track biometrics, hormonal panels, and revenue correlation.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-navy-light border border-white/5 p-6 rounded-sm relative">
+                    <div class="flex items-center gap-3 mb-6 border-b border-white/5 pb-4">
+                        <div class="w-10 h-10 rounded-full bg-slate-600"></div>
+                        <div>
+                            <p class="text-white text-sm font-bold">Jessica (CMO)</p>
+                            <p class="text-slate-500 text-xs">iMessage • Today 9:42 AM</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-700/50 p-3 rounded-lg rounded-bl-none text-sm text-slate-200 w-[90%]">
+                            Sarah... I just fit into the suit I wore to my Series A pitch 3 years ago. 😭
+                        </div>
+                        <div class="bg-slate-700/50 p-3 rounded-lg rounded-bl-none text-sm text-slate-200 w-[80%]">
+                            Also, my assistant said I was "scary sharp" in the board meeting today. The brain fog is GONE.
+                        </div>
+                        <div class="bg-gold/20 p-3 rounded-lg rounded-br-none text-sm text-gold ml-auto w-[70%] text-right">
+                            That's the neuro-inflammation protocol working. We are just getting started. ⚔️
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-navy-light border border-white/5 p-6 rounded-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <p class="text-white font-bold">Readiness Score</p>
+                            <span class="text-green-400 font-mono">92</span>
+                        </div>
+                        <div class="w-full h-32 bg-navy-dark rounded-sm relative flex items-end gap-1 p-2">
+                            <div class="w-full bg-slate-700 h-[20%] rounded-t-sm"></div>
+                            <div class="w-full bg-slate-700 h-[30%] rounded-t-sm"></div>
+                            <div class="w-full bg-slate-600 h-[25%] rounded-t-sm"></div>
+                            <div class="w-full bg-slate-600 h-[40%] rounded-t-sm"></div>
+                            <div class="w-full bg-gold/50 h-[60%] rounded-t-sm animate-pulse"></div>
+                            <div class="w-full bg-gold h-[85%] rounded-t-sm"></div>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-4 uppercase tracking-widest">Client: Elena R. (Week 4)</p>
+                    </div>
+                    <div class="mt-6 border-t border-white/5 pt-4">
+                        <p class="text-slate-300 text-sm italic">"My HRV hasn't been this high since I was 25. I'm sleeping 7 hours but feeling like I slept 10."</p>
+                    </div>
+                </div>
+
+                <div class="bg-navy-light border border-white/5 p-6 rounded-sm">
+                    <div class="border-b border-white/5 pb-4 mb-4">
+                        <p class="text-xs text-slate-500 uppercase">Subject</p>
+                        <p class="text-white font-bold text-sm">Re: Diastasis Check-in</p>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        ...the gap is completely closed. My physio couldn't believe it. She asked what protocol I was doing because she's never seen a 3-finger separation close in 6 weeks without surgery.
+                        <br><br>
+                        Thank you for giving me my core back. I felt powerful holding my son today.
+                    </p>
+                    <div class="flex items-center gap-2 mt-6">
+                        <div class="w-8 h-8 rounded-full bg-gold/20 text-gold flex items-center justify-center font-serif font-bold">M</div>
+                        <div>
+                            <p class="text-white text-xs font-bold">Maria T.</p>
+                            <p class="text-slate-500 text-[10px]">VP of Operations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-navy-dark border-y border-white/5">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="w-full lg:w-1/2">
+                    <div class="relative aspect-[4/5] bg-slate-800 rounded-sm overflow-hidden shadow-2xl">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop')] bg-cover bg-center"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent"></div>
+                        <div class="absolute bottom-8 left-8">
+                            <span class="bg-gold text-navy px-3 py-1 text-xs font-bold uppercase tracking-widest">Case Study</span>
+                            <h3 class="text-white font-serif text-3xl mt-2">The "Burnout" Pivot</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 space-y-8">
+                    <h2 class="font-serif text-3xl text-white">Meet Rebecca. Founder. Mother. Exhausted.</h2>
+                    <div class="space-y-4 text-slate-300 leading-relaxed">
+                        <p>
+                            <strong>The Situation:</strong> Rebecca (38) had just raised her Series B. She had a 6-month-old at home. She was drinking 4 coffees a day to survive and waking up 3 times a night. Her doctor told her she was "pre-diabetic" despite eating clean.
+                        </p>
+                        <p>
+                            <strong>The Diagnosis:</strong> Her cortisol was chronically elevated, locking her body in "storage mode." Her intense Peloton workouts were actually making her <em>fatter</em> and more inflamed.
+                        </p>
+                        <p>
+                            <strong>The Protocol:</strong> We stripped all high-intensity cardio. We repaired her sleep hygiene. We implemented the "Metabolic Density" lift protocol twice a week.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 border-t border-white/10 pt-6">
+                        <div>
+                            <p class="text-slate-500 text-xs uppercase tracking-widest">Weight Loss</p>
+                            <p class="text-gold font-serif text-3xl">22 lbs</p>
+                        </div>
+                        <div>
+                            <p class="text-slate-500 text-xs uppercase tracking-widest">Energy Score</p>
+                            <p class="text-gold font-serif text-3xl">+64%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-navy">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-gold text-xs uppercase tracking-widest font-bold">The Methodology</span>
+                <h2 class="font-serif text-3xl md:text-5xl text-white mt-4">The 90-Day Roadmap</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-navy-light border border-white/5 p-8 rounded-sm hover:border-gold/30 transition-all hover:-translate-y-2 duration-300">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="text-4xl text-slate-700 font-serif">01</div>
+                        <div class="px-3 py-1 bg-navy text-[10px] text-slate-400 uppercase tracking-widest border border-white/5">Days 1-30</div>
+                    </div>
+                    <h3 class="text-xl text-white font-bold mb-4">FOUNDATION & REPAIR</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">We stop the leaks. We use clinical breathing mechanics to close the Diastasis gap and stop pelvic floor dysfunction.</p>
+                </div>
+
+                <div class="bg-navy-light border border-white/5 p-8 rounded-sm hover:border-gold/30 transition-all hover:-translate-y-2 duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gold"></div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="text-4xl text-slate-700 font-serif">02</div>
+                        <div class="px-3 py-1 bg-gold text-[10px] text-navy uppercase tracking-widest font-bold">Days 31-60</div>
+                    </div>
+                    <h3 class="text-xl text-white font-bold mb-4">METABOLIC ACCELERATION</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">We light the metabolic fire. Once stability is restored, we introduce "Metabolic Density" training—short, intense bursts designed to strip fat without spiking cortisol.</p>
+                </div>
+
+                <div class="bg-navy-light border border-white/5 p-8 rounded-sm hover:border-gold/30 transition-all hover:-translate-y-2 duration-300">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="text-4xl text-slate-700 font-serif">03</div>
+                        <div class="px-3 py-1 bg-navy text-[10px] text-slate-400 uppercase tracking-widest border border-white/5">Days 61-90</div>
+                    </div>
+                    <h3 class="text-xl text-white font-bold mb-4">EXECUTIVE INTEGRATION</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">We build the Executive Athlete. We install the "Travel Protocols" and "Dining Out SOPs" so you can maintain elite physiology while flying.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-navy-dark relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-navy opacity-30 transform skew-x-12"></div>
+        
+        <div class="relative z-10 max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
+            
+            <div class="space-y-8">
+                <h2 class="font-serif text-3xl md:text-5xl text-white">The Executive Package</h2>
+                <p class="text-slate-300 text-lg">This is not a PDF download. This is a managed physiological transformation service.</p>
+                
+                <div class="space-y-4">
+                    <div class="bg-navy border border-white/5 p-5 flex gap-4 items-center hover:border-gold/20 transition-colors">
+                        <div class="w-12 h-12 bg-gold/10 text-gold flex items-center justify-center rounded-sm font-bold text-xl">01</div>
+                        <div>
+                            <p class="text-white font-bold">1:1 Biometric Data Review (Bi-Weekly)</p>
+                            <p class="text-xs text-slate-500">We analyze your HRV, Sleep, and Cycle data to adjust your plan.</p>
+                        </div>
+                    </div>
+                    <div class="bg-navy border border-white/5 p-5 flex gap-4 items-center hover:border-gold/20 transition-colors">
+                        <div class="w-12 h-12 bg-gold/10 text-gold flex items-center justify-center rounded-sm font-bold text-xl">02</div>
+                        <div>
+                            <p class="text-white font-bold">The "Core Integrity" Rehab System</p>
+                            <p class="text-xs text-slate-500">Clinical protocols to fix Diastasis Recti (No crunches).</p>
+                        </div>
+                    </div>
+                    <div class="bg-navy border border-white/5 p-5 flex gap-4 items-center hover:border-gold/20 transition-colors">
+                        <div class="w-12 h-12 bg-gold/10 text-gold flex items-center justify-center rounded-sm font-bold text-xl">03</div>
+                        <div>
+                            <p class="text-white font-bold">The "Sleep-Deprived" Nutrition Protocol</p>
+                            <p class="text-xs text-slate-500">Hormonally optimized nutrition for high-stress environments.</p>
+                        </div>
+                    </div>
+                    <div class="bg-navy border border-white/5 p-5 flex gap-4 items-center hover:border-gold/20 transition-colors">
+                        <div class="w-12 h-12 bg-gold/10 text-gold flex items-center justify-center rounded-sm font-bold text-xl">04</div>
+                        <div>
+                            <p class="text-white font-bold">Bonus: The "Outsource Everything" SOP</p>
+                            <p class="text-xs text-slate-500">Handbooks for your nanny/chef to execute the plan for you.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-8 border-t border-white/10">
+                    <p class="text-sm text-slate-400 mb-2">Total Clinical Value: <span class="line-through">$12,000</span></p>
+                    <div class="flex items-end gap-4">
+                        <p class="text-4xl text-white font-serif">Investment: <span class="text-gold">$5,800</span></p>
+                        <p class="text-sm text-slate-400 pb-2">(Payment plans available)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <div class="relative h-[400px] bg-slate-800 rounded-sm overflow-hidden shadow-2xl border border-white/10">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center opacity-80"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <p class="font-serif text-2xl">Sarah Jenkins</p>
+                        <p class="text-gold text-xs uppercase tracking-widest">Founder & Lead Physiologist</p>
+                    </div>
+                </div>
+
+                <div class="bg-white text-navy p-8 border-l-4 border-gold shadow-xl relative">
+                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-gold rounded-full flex items-center justify-center text-navy font-bold shadow-lg">✓</div>
+                    <p class="font-bold uppercase tracking-widest text-xs mb-3 text-slate-500">The C-Suite Guarantee</p>
+                    <p class="font-serif text-xl leading-tight mb-4">"We don't guess. If your HRV and Subjective Energy Score do not improve by 20% in the first 30 days, we issue a full refund."</p>
+                    <p class="text-sm text-slate-600">This is a results-based partnership.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-24 bg-navy border-t border-white/5" x-data="{ active: null }">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="font-serif text-3xl text-white text-center mb-12">Executive Briefing (FAQ)</h2>
+            <div class="space-y-4">
+                <div class="border border-white/5 bg-navy-light hover:border-gold/20 transition-colors">
+                    <button @click="active === 1 ? active = null : active = 1" class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                        <span class="text-white font-medium">I have a nanny and a cook. Do I still need this?</span>
+                        <span class="text-gold font-serif text-xl" x-text="active === 1 ? '−' : '+'"></span>
+                    </button>
+                    <div x-show="active === 1" class="p-6 pt-0 text-slate-400 text-sm leading-relaxed border-t border-white/5" x-transition>
+                        Yes. Outsourcing labor is smart, but you cannot outsource your metabolism. We will actually provide SOPs for your staff.
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="apply" class="py-24 bg-navy-dark flex items-center justify-center text-center">
+        <div class="max-w-3xl mx-auto px-6 space-y-8">
+            <h2 class="font-serif text-4xl text-white">This Is Application Only.</h2>
+            <p class="text-slate-400 leading-relaxed">
+                We work with a maximum of 15 women per cohort to ensure we can monitor your biometrics daily. 
+                If you are ready to reclaim your physical sovereignty, book your interview below.
+            </p>
+            
+            <div class="bg-navy border border-white/10 p-1 rounded-sm inline-block w-full max-w-sm">
+                <a href="booking.html" class="block w-full py-4 bg-gold text-navy font-bold text-lg uppercase tracking-widest hover:bg-white transition-all shadow-lg rounded-sm">
+                    Confirm Interview
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-navy border-t border-white/5 text-center">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
+            <div class="w-8 h-8 bg-gold/20 text-gold rounded-sm flex items-center justify-center mb-6">
+                <span class="font-serif font-bold">P</span>
+            </div>
+            <p class="font-serif text-white tracking-widest mb-4">POSTPARTUM POWERHOUSE</p>
+            <p class="text-xs text-slate-600">© 2024 Sarah Jenkins. All Rights Reserved. <br> Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+</body>
+</html>
