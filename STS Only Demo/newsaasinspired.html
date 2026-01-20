@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System That Sells™ | The Client Acquisition Machine</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700;800&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        :root {
+            --bg-body: #050505;
+            --bg-card: #0F0F0F;
+            --gold: #D4AF37;
+            --gold-dim: #8a701e;
+            --white: #FFFFFF;
+            --muted: #B8B8B8;
+            --border-light: rgba(255, 255, 255, 0.08);
+            --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #F5D060 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--muted);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1,
+        h2,
+        h3,
+        h4,
+        .saas-label {
+            font-family: 'Jost', sans-serif;
+            color: var(--white);
+            line-height: 1.1;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        h2 {
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #aaa;
+        }
+
+        strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .gold-text {
+            color: var(--gold);
+        }
+
+        .gradient-text {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .saas-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            border: 1px solid var(--gold-dim);
+            padding: 6px 12px;
+            border-radius: 100px;
+            display: inline-block;
+            margin-bottom: 20px;
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        /* --- LAYOUT UTILITIES --- */
+        .wrapper {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-padding {
+            padding: 140px 0;
+            position: relative;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .grid-bento {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+
+        .span-4 {
+            grid-column: span 4;
+        }
+
+        .span-6 {
+            grid-column: span 6;
+        }
+
+        .span-8 {
+            grid-column: span 8;
+        }
+
+        .span-12 {
+            grid-column: span 12;
+        }
+
+        /* --- UI COMPONENTS --- */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-gold);
+            color: #000;
+            padding: 20px 48px;
+            font-family: 'Jost', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-light);
+            padding: 48px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: var(--gold-dim);
+            transform: translateY(-5px);
+        }
+
+        /* --- 5 PILLARS STYLE --- */
+        .pillar-card {
+            background: #0a0a0a;
+            border-left: 2px solid var(--gold-dim);
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            border-left: 2px solid var(--gold);
+            background: #111;
+            padding-left: 40px;
+        }
+
+        .pillar-num {
+            font-family: 'Jost', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.05);
+            line-height: 1;
+            margin-bottom: -10px;
+            display: block;
+        }
+
+        /* --- TIMELINE / MODULE STYLES --- */
+        .timeline-container {
+            position: relative;
+            margin-top: 100px;
+        }
+
+        .module-row {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            margin-bottom: 200px;
+            position: relative;
+        }
+
+        .module-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .module-content {
+            flex: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        .module-visual {
+            flex: 1.2;
+            background: linear-gradient(145deg, #0e0e0e 0%, #050505 100%);
+            border: 1px solid #222;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7);
+            perspective: 1000px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .connection-line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 250px;
+            background: linear-gradient(to bottom, #333 0%, #333 50%, transparent 100%);
+            z-index: 0;
+            display: block;
+        }
+
+        /* --- VISUAL MOCKUPS --- */
+        .ui-mockup-3d {
+            background: #000;
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+            transform: rotateY(-10deg) rotateX(5deg);
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .module-visual:hover .ui-mockup-3d {
+            transform: rotateY(0deg) rotateX(0deg);
+        }
+
+        .ui-header {
+            height: 30px;
+            background: #151515;
+            border-bottom: 1px solid #222;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+        }
+
+        .ui-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #444;
+            margin-right: 6px;
+        }
+
+        /* --- FAQ STYLES --- */
+        .faq-item {
+            border-bottom: 1px solid #222;
+            padding: 25px 0;
+        }
+
+        .faq-question {
+            font-family: 'Jost', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            position: relative;
+            padding-right: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+        }
+
+        .faq-question::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--gold);
+            transition: transform 0.3s;
+        }
+
+        .faq-item[open] .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            margin-top: 15px;
+            color: #aaa;
+            font-size: 1rem;
+            padding-right: 20px;
+            line-height: 1.6;
+        }
+
+        /* --- BACKGROUNDS --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #111 0%, #050505 70%);
+            padding-top: 80px;
+        }
+
+        /* --- TICKER --- */
+        .ticker-wrap {
+            width: 100%;
+            overflow: hidden;
+            background: #000;
+            padding: 25px 0;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+            white-space: nowrap;
+        }
+
+        .ticker {
+            display: inline-block;
+            animation: marquee 40s linear infinite;
+        }
+
+        .ticker-item {
+            display: inline-block;
+            padding: 0 50px;
+            font-family: 'Jost', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #222;
+            text-transform: uppercase;
+            -webkit-text-stroke: 1px #444;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+
+            100% {
+                transform: translate3d(-50%, 0, 0);
+            }
+        }
+
+        /* --- MOBILE --- */
+        @media (max-width: 992px) {
+
+            .grid-2,
+            .grid-3,
+            .grid-bento,
+            .module-row,
+            .module-row.reverse {
+                display: block;
+            }
+
+            .module-visual {
+                margin-top: 40px;
+                margin-bottom: 80px;
+            }
+
+            .span-4,
+            .span-6,
+            .span-8 {
+                grid-column: span 12;
+                margin-bottom: 24px;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            .connection-line {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="wrapper" data-aos="fade-up" data-aos-duration="1000">
+            <div class="saas-label">DONE-FOR-YOU SYSTEM INSTALLATION</div>
+            <h1 style="margin-bottom: 30px;">Stop Being The Engine.<br><span class="gradient-text">Install One.</span>
+            </h1>
+            <p style="max-width: 750px; margin: 0 auto 50px; font-size: 1.35rem; color: #ccc;">
+            We install a complete <strong>AI-Powered Client Acquisition System in 14 days</strong>,
+            then optimize it over the next 90 days to guarantee results.<br>
+                <br>No manual selling. No tech chaos. Just a predictable system you own.
+            </p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="#booking" class="btn-primary">Book My System Audit</a>
+            </div>
+            <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.5;">Application Only • $10k/mo+ Coaches • 90-Day
+                Guarantee</p>
+        </div>
+    </header>
+
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <div class="ticker-item">Systems &gt; Effort</div>
+            <div class="ticker-item">Predictability &gt; Improvisation</div>
+            <div class="ticker-item">Structure Creates Calm</div>
+            <div class="ticker-item">Ownership &gt; Agency</div>
+            <div class="ticker-item">Systems &gt; Effort</div>
+        </div>
+    </div>
+
+    <section class="section-padding">
+        <div class="wrapper">
+            <div class="grid-2">
+                <div data-aos="fade-right">
+                    <div class="saas-label">THE TRAP</div>
+                    <h2>The "Golden Cage" Paradox</h2>
+                    <p>You’ve built a proven offer. You have real client results. You are making money. But you don't
+                        feel free. You feel <strong>boxed in.</strong></p>
+                    <p>Why? Because your revenue is tied to your manual effort. You are the one chasing leads in DMs.
+                        You are the one explaining the offer. You are the one putting out fires.</p>
+                    <p>You bought "parts"—a VA here, a course there, a generic funnel template—but you never installed a
+                        central operating system.</p>
+                </div>
+                <div data-aos="fade-left">
+                    <div class="glass-card" style="text-align: center; padding: 60px 40px;">
+                        <h3 style="color: #666; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 20px;">The
+                            Reality Check</h3>
+                        <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Operator
+                            <span style="font-size: 1.5rem; color: #666;">vs</span> <span class="gold-text">Owner</span>
+                        </h2>
+                        <p style="font-size: 1rem;">Operators hustle to create revenue.<br>Owners build machines that create revenue.
+                        </p>
+                        <div
+                            style="margin-top: 30px; background: #111; padding: 15px; border-radius: 8px; border: 1px solid #333;">
+                            <p style="margin: 0; font-size: 0.9rem; color: var(--gold);"><strong>Goal:</strong> Replace
+                                "You" with "System"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: #080808;">
+        <div class="wrapper">
+            <div class="grid-2">
+                <div data-aos="fade-right">
+                    <div class="saas-label">THE OPERATING STANDARD</div>
+                    <h2>The 5 Pillars of Predictability</h2>
+                    <p>Before we install any tech, we install a new philosophy. If even one of these pillars is missing,
+                        the business collapses back into hustle.</p>
+                    <div style="margin-top: 40px;">
+                        <a href="#booking" class="btn-primary">Adopt The Standard</a>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <div class="pillar-card">
+                        <span class="pillar-num">01</span>
+                        <h3>High-Level Identity</h3>
+                        <p style="margin: 0; font-size: 0.95rem;">Shift from "Hustler" to "Operator." You value time
+                            more than money. You make decisions, not noise.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <span class="pillar-num">02</span>
+                        <h3>High-Ticket Offer</h3>
+                        <p style="margin: 0; font-size: 0.95rem;">Price for leverage. Speed, certainty, and
+                            results—delivered without 24/7 founder presence.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <span class="pillar-num">03</span>
+                        <h3>System That Sells</h3>
+                        <p style="margin: 0; font-size: 0.95rem;">A machine that generates demand, qualifies leads, and
+                            pre-sells the offer before you ever speak.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <span class="pillar-num">04</span>
+                        <h3>Track Everything</h3>
+                        <p style="margin: 0; font-size: 0.95rem;">Business is a numbers game. We track every click,
+                            lead, and dollar to kill the guesswork.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <span class="pillar-num">05</span>
+                        <h3>Brain Clone</h3>
+                        <p style="margin: 0; font-size: 0.95rem;">AI trained on your thoughts, ideas & voice that thinks like you, write like and sell like you.
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="wrapper">
+            <div style="text-align: center; margin-bottom: 120px;" data-aos="fade-up">
+                <div class="saas-label">INSIDE THE ENGINE</div>
+                <h2>The 4 Tech Modules</h2>
+                <p>We don't just "build funnels." We install these 4 specific systems into your business.</p>
+            </div>
+
+            <div class="module-row">
+                <div class="module-content" data-aos="fade-right">
+                    <div class="saas-label">MODULE 01</div>
+                    <h3>Automated Capture & Routing</h3>
+                    <p>Stop typing "Link in bio" 50 times a day. We install keyword-triggered automation that turns
+                        social engagement into captured leads instantly.</p>
+                    <ul style="list-style: none; margin-top: 20px; color: #ccc;">
+                        <li style="margin-bottom: 15px;">✓ <strong>Comment-to-DM:</strong> "Send me the PDF" &rarr;
+                            Instant DM sent.</li>
+                        <li style="margin-bottom: 15px;">✓ <strong>Bot-to-Human Handoff:</strong> The system qualifies,
+                            you close.</li>
+                        <li>✓ <strong>24/7 Response:</strong> Capture leads while you sleep.</li>
+                    </ul>
+                </div>
+                <div class="module-visual" data-aos="fade-left">
+                    <div class="ui-mockup-3d">
+                        <div class="ui-header">
+                            <div class="ui-dot"></div>
+                            <div class="ui-dot"></div>
+                        </div>
+                        <div style="padding: 30px; background: #111;">
+                            <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                                <div style="width: 40px; height: 40px; background: #333; border-radius: 50%;"></div>
+                                <div
+                                    style="background: #222; padding: 15px; border-radius: 0 15px 15px 15px; color: #ccc; font-size: 0.9rem;">
+                                    Keyword Trigger: "SYSTEM"</div>
+                            </div>
+                            <div style="display: flex; gap: 15px; justify-content: flex-end;">
+                                <div
+                                    style="background: var(--gold); color: #000; padding: 15px; border-radius: 15px 0 15px 15px; font-size: 0.9rem; font-weight: 600;">
+                                    DM Sent: Access Link + Next Steps 🚀</div>
+                                <div style="width: 40px; height: 40px; background: #555; border-radius: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-row reverse">
+                <div class="module-content" data-aos="fade-left">
+                    <div class="saas-label">MODULE 02</div>
+                    <h3>The Assessment Logic</h3>
+                    <p>Protect your calendar. We build a precision assessment (12-20 questions) that calculates a lead's
+                        "Fit Score" in real-time.</p>
+                    <ul style="list-style: none; margin-top: 20px; color: #ccc;">
+                        <li style="margin-bottom: 15px;">✓ <strong>High Intent (&gt;80):</strong> Routed to Booking
+                            Page.</li>
+                        <li style="margin-bottom: 15px;">✓ <strong>Low Intent (&lt;60):</strong> Routed to Nurture
+                            Sequence.</li>
+                        <li>✓ <strong>Result:</strong> 100% Qualified Calls.</li>
+                    </ul>
+                </div>
+                <div class="module-visual" data-aos="fade-right">
+                    <div class="ui-mockup-3d">
+                        <div class="ui-header">
+                            <div class="ui-dot"></div>
+                            <div class="ui-dot"></div>
+                        </div>
+                        <div style="padding: 30px; background: #1a1a1a;">
+                            <div
+                                style="color: #666; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 10px;">
+                                Logic Flow</div>
+                            <div
+                                style="background: #222; border: 1px solid #333; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+                                <div style="color: #fff; font-weight: bold;">IF Score &gt;= 80</div>
+                            </div>
+                            <div
+                                style="background: rgba(212,175,55,0.1); border: 1px solid var(--gold-dim); padding: 20px; border-radius: 6px; margin-left: 30px;">
+                                <div style="color: var(--gold); font-weight: bold;">THEN: Unlock Booking</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-row">
+                <div class="module-content" data-aos="fade-right">
+                    <div class="saas-label">MODULE 03</div>
+                    <h3>The Brain Clone™ AI</h3>
+                    <p>We train a custom AI model on your voice, offer, target audience, and brand identity.</p>
+                    <p>It creates all the content for you without your presence. Content that sounds like you, know your target audience's deepest desires and pain point, and pre-sell your high ticket offer.</p>
+                </div>
+                <div class="module-visual" data-aos="fade-left">
+                    <div class="ui-mockup-3d">
+                        <div style="padding: 40px; text-align: center; background: #000;">
+                            <div
+                                style="width: 80px; height: 80px; background: linear-gradient(135deg, #D4AF37, #000); border-radius: 50%; margin: 0 auto 20px; box-shadow: 0 0 30px var(--gold);">
+                            </div>
+                            <h4 style="margin-bottom: 10px; color: #fff;">Brain Clone Active</h4>
+                            <p style="font-size: 0.9rem; color: #888; font-style: italic;">"I understand your hesitation
+                                on price. However, our clients typically see ROI in 45 days."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-row reverse">
+                <div class="module-content" data-aos="fade-left">
+                    <div class="saas-label">MODULE 04</div>
+                    <h3>The Command Dashboard</h3>
+                    <p>A business you can't measure is a business you can't scale. We build a custom Pipeline View that
+                        shows you the truth.</p>
+                    <p>See exactly where every dollar is. Track "New Leads" to "Cash Collected" in real-time.</p>
+                </div>
+                <div class="module-visual" data-aos="fade-right">
+                    <div class="ui-mockup-3d">
+                        <div class="ui-header">
+                            <div class="ui-dot"></div>
+                        </div>
+                        <div
+                            style="padding: 20px; background: #111; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
+                            <div style="background: #1a1a1a; padding: 15px; border-radius: 6px; text-align: center;">
+                                <div style="font-size: 0.7rem; color: #666; margin-bottom: 5px;">QUALIFIED</div>
+                                <div style="font-size: 1.8rem; color: var(--gold); font-weight: bold;">38</div>
+                            </div>
+                            <div style="background: #1a1a1a; padding: 15px; border-radius: 6px; text-align: center;">
+                                <div style="font-size: 0.7rem; color: #666; margin-bottom: 5px;">BOOKED</div>
+                                <div style="font-size: 1.8rem; color: #fff; font-weight: bold;">12</div>
+                            </div>
+                            <div style="background: #1a1a1a; padding: 15px; border-radius: 6px; text-align: center;">
+                                <div style="font-size: 0.7rem; color: #666; margin-bottom: 5px;">REVENUE</div>
+                                <div style="font-size: 1.8rem; color: #fff; font-weight: bold;">$24k</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: #080808;">
+        <div class="wrapper">
+            <div style="text-align: center; margin-bottom: 100px;">
+                <div class="saas-label">THE 90-DAY PROTOCOL</div>
+                <h2>How We Install It</h2>
+                <p>No skipped steps. No shortcuts. A structured deployment.</p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="module-row">
+                    <div class="connection-line"></div>
+                    <div class="module-content" data-aos="fade-right">
+                        <div class="saas-label">DAY 1</div>
+                        <h3 style="font-size: 2rem; margin-bottom: 15px;">Foundation & Logic Lock</h3>
+                        <p>We start with a deep-dive "Brain Clone" session. We extract your genius, lock your offer
+                            positioning, and define the qualification logic.</p>
+                        <ul style="list-style: none; color: #ccc;">
+                            <li>• Lock Identity & Offer</li>
+                            <li>• Confirm Qualification Logic</li>
+                            <li>• Finalize System Boundaries</li>
+                        </ul>
+                    </div>
+                    <div class="module-visual" data-aos="fade-left">
+                        <div class="ui-mockup-3d">
+                            <div
+                                style="padding: 40px; background: #050505; display: flex; align-items: center; justify-content: center;">
+                                <h2 style="margin: 0; color: #333;">BLUEPRINT
+                                    <span style="color: var(--gold);">LOCKED</span></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-row reverse">
+                    <div class="connection-line"></div>
+                    <div class="module-content" data-aos="fade-left">
+                        <div class="saas-label">DAYS 2–14</div>
+                        <h3 style="font-size: 2rem; margin-bottom: 15px;">The Build</h3>
+                        <p>You step back. We step in. We build every page, write every email, wire every automation, and
+                            set up the tracking.</p>
+                        <ul style="list-style: none; color: #ccc;">
+                            <li>• Build all funnel pages</li>
+                            <li>• Install assessments</li>
+                            <li>• Wire automations</li>
+                            <li>• QA everything</li>
+                        </ul>
+                    </div>
+                    <div class="module-visual" data-aos="fade-right">
+                        <div class="ui-mockup-3d">
+                            <div style="padding: 40px; background: #111;">
+                                <div style="height: 20px; width: 60%; background: #333; margin-bottom: 15px;"></div>
+                                <div
+                                    style="height: 100px; width: 100%; border: 1px dashed #444; display: flex; align-items: center; justify-content: center; color: #666;">
+                                    BUILDING ASSETS...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-row">
+                    <div class="connection-line"></div>
+                    <div class="module-content" data-aos="fade-right">
+                        <div class="saas-label">DAYS 15–45</div>
+                        <h3 style="font-size: 2rem; margin-bottom: 15px;">Activation & Leaks</h3>
+                        <p>We turn on the traffic. We watch the data. We fix the leaks. This is where the system comes
+                            alive.</p>
+                        <ul style="list-style: none; color: #ccc;">
+                            <li>• Activate system</li>
+                            <li>• Fix leaks</li>
+                            <li>• Improve qualification</li>
+                        </ul>
+                    </div>
+                    <div class="module-visual" data-aos="fade-left">
+                        <div class="ui-mockup-3d">
+                            <div style="padding: 40px; background: #050505; text-align: center;">
+                                <div style="color: var(--gold); font-size: 2rem; font-weight: bold;">LIVE</div>
+                                <div style="color: #444; font-size: 0.8rem;">DATA STREAMING</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-row reverse">
+                    <div class="module-content" data-aos="fade-left">
+                        <div class="saas-label">DAYS 46–90</div>
+                        <h3 style="font-size: 2rem; margin-bottom: 15px;">Stabilize & Transfer</h3>
+                        <p>We optimize for stability, then we hand you the keys. You own the system. You own the assets.
+                            No dependencies.</p>
+                        <ul style="list-style: none; color: #ccc;">
+                            <li>• Optimize & Stabilize</li>
+                            <li>• Transfer control</li>
+                        </ul>
+                    </div>
+                    <div class="module-visual" data-aos="fade-right">
+                        <div class="ui-mockup-3d">
+                            <div style="padding: 40px; background: #000; text-align: center;">
+                                <div style="font-size: 3rem; color: var(--gold);">♛</div>
+                                <h3>OWNERSHIP</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="wrapper">
+            <h2 style="text-align: center; margin-bottom: 60px;">The Deliverables</h2>
+            <div class="grid-bento">
+                <div class="glass-card span-8" data-aos="zoom-in">
+                    <h3 class="gold-text">8+ Custom Pages</h3>
+                    <p>Sales Page, Opt-in, Thank You, Assessment, Booking, Delivery Hub. All designed in dark-mode
+                        luxury.</p>
+                </div>
+                <div class="glass-card span-4" style="background: var(--gold); color: #000;" data-aos="zoom-in"
+                    data-aos-delay="100">
+                    <h3 style="color: #000;">14 Days</h3>
+                    <p style="color: #333; margin: 0;">Turnaround Time.</p>
+                </div>
+                <div class="glass-card span-6" data-aos="zoom-in" data-aos-delay="200">
+                    <h3>Email Sequences</h3>
+                    <p>Nurture flows pre-written and installed.</p>
+                </div>
+                <div class="glass-card span-6" data-aos="zoom-in" data-aos-delay="300">
+                    <h3>Workflows</h3>
+                    <p>Tagging, reminders, and automations.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 100px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <h2 style="text-align: center; margin-bottom: 50px;">Questions & Protocols</h2>
+
+                <details class="faq-item">
+                    <summary class="faq-question">Who is this system for?</summary>
+                    <div class="faq-answer">
+                        <p>This is exclusively for coaches and expert service providers currently doing $10k-$50k/month.
+                            You must have a proven offer and verified client results. This is not for beginners.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">Is this a group coaching program?</summary>
+                    <div class="faq-answer">
+                        <p>No. This is a Done-For-You (DFY) system installation. We are not teaching you how to build a
+                            funnel; we are building it, wiring it, and installing it into your business for you.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">How fast can we launch?</summary>
+                    <div class="faq-answer">
+                        <p>The "Build Phase" takes 14 days. This includes all pages, automations, and tracking. After
+                            day 14, we enter the Activation Phase.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">Do I need to be tech-savvy?</summary>
+                    <div class="faq-answer">
+                        <p>No. That is the point of the service. We handle the design, the code, the automations, and
+                            the integrations. You provide the judgment; the system provides the execution.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">Do I own the system?</summary>
+                    <div class="faq-answer">
+                        <p>Yes. After the 90-day stabilization period, you have 100% ownership and control of all
+                            assets. There are no ongoing licensing fees or lock-ins.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">What is the guarantee?</summary>
+                    <div class="faq-answer">
+                        <p>If you implement System That Sells™ as your primary acquisition system and do not collect at
+                            least double your investment within 90 days, we continue working at no additional cost for
+                            up to 12 months until you do.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">Can I use this for low-ticket offers?</summary>
+                    <div class="faq-answer">
+                        <p>No. This system is engineered for high-ticket sales ($2k+ offers) where a sales call is
+                            typically required. It is designed to optimize the booked call process.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">Why shouldn't I just hire an agency?</summary>
+                    <div class="faq-answer">
+                        <p>Agencies rent you their results. We install a machine that you own. Predictability requires
+                            ownership, not dependency.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: radial-gradient(circle at top, #111 0%, #000 100%);">
+        <div class="wrapper">
+            <div style="border: 1px solid var(--gold); background: linear-gradient(180deg, rgba(212,175,55,0.05) 0%, #000 100%); padding: 80px 40px; text-align: center; border-radius: 12px;"
+                data-aos="fade-up">
+                <div class="saas-label">THE SAFETY NET</div>
+                <h2 style="color: var(--white);">The 2x Guarantee</h2>
+                <p style="font-size: 1.3rem; max-width: 800px; margin: 24px auto;">
+                    If the system doesn't generate at least <strong>double your investment</strong> in collected cash
+                    within 90 days, we keep working for free until it does.
+                </p>
+                <a id="booking" href="https://systemthatsells.com/booking-page" class="btn-primary">Book My System Audit</a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 80px 0; border-top: 1px solid #111; text-align: center; font-size: 0.9rem; color: #555;">
+        <p>&copy; 2025 System That Sells™.</p>
+        
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50 });
+    </script>
+</body>
+
+</html>

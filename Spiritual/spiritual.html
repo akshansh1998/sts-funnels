@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Soul Alchemist | Quantum Alignment Shift</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* --- 1. THEME ENGINE: ORGANIC (HEALER) --- */
+        :root {
+            /* BACKGROUNDS (Cream/Soft) */
+            --bg-body: #F9F7F2; 
+            --bg-panel: #F2EFE9; 
+            --bg-card: #FFFFFF;
+            
+            /* TEXT COLORS */
+            --text-primary: #4A4A4A; /* Charcoal Grey for readability */
+            --text-muted: #7A7A7A;
+            --text-gold: #C5A059;    /* Muted Gold */
+
+            /* BRAND IDENTITY */
+            --brand-primary: #8DA399;  /* Sage Green */
+            --brand-glow: rgba(141, 163, 153, 0.2); 
+            --soft-shadow: 0 20px 40px -10px rgba(141, 163, 153, 0.15);
+            
+            /* TYPOGRAPHY */
+            --font-head: 'Playfair Display', serif; 
+            --font-body: 'Lato', sans-serif;
+            
+            --spacing-lg: 140px;
+            --border-radius: 30px; /* Pill Shapes per Archetype 4 */
+        }
+
+        /* --- 2. BASE RESET --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.8; /* Looser leading for "breath" */
+            overflow-x: hidden;
+            font-size: 17px;
+        }
+        ul { list-style: none; }
+
+        /* --- 3. TYPOGRAPHY --- */
+        h1, h2, h3, h4 {
+            font-family: var(--font-head);
+            font-weight: 600; 
+            color: var(--text-primary);
+            line-height: 1.2; 
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+        h1 { font-size: clamp(3rem, 6vw, 5rem); font-style: italic; }
+        h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); }
+        h3 { font-size: 1.5rem; color: var(--brand-primary); }
+        
+        p, li { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 300; }
+        
+        .text-brand { color: var(--brand-primary); }
+        .text-gold { color: var(--text-gold); }
+        .text-center { text-align: center; }
+        .italic { font-style: italic; }
+        .uppercase { 
+            text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; 
+            font-weight: 700; color: var(--text-gold); margin-bottom: 1.5rem; display: block; 
+            font-family: var(--font-body);
+        }
+
+        /* GOLD SHIMMER (Subtle/Elegant) */
+        .shimmer-text {
+            background: linear-gradient(110deg, var(--text-gold) 30%, #E6D2A8 50%, var(--text-gold) 70%);
+            background-size: 200% auto;
+            color: transparent; -webkit-background-clip: text; background-clip: text;
+            animation: shine 6s ease-in-out infinite; /* Slower animation for calm vibe */
+        }
+        @keyframes shine { to { background-position: 200% center; } }
+
+        /* --- 4. COMPONENTS --- */
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 2; }
+        section { padding: var(--spacing-lg) 0; position: relative; }
+
+        /* PILL BUTTONS (Organic Archetype) */
+        .btn-brand {
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--brand-primary);
+            color: #fff;
+            font-family: var(--font-body); font-weight: 700;
+            text-transform: uppercase; letter-spacing: 2px;
+            padding: 22px 60px; font-size: 0.9rem;
+            text-decoration: none; border: none; cursor: pointer;
+            transition: all 0.5s ease;
+            border-radius: 50px; /* Full pill shape */
+            box-shadow: var(--soft-shadow);
+        }
+        .btn-brand:hover { 
+            transform: translateY(-5px); 
+            background: #9FB5AB; 
+            box-shadow: 0 15px 30px rgba(141, 163, 153, 0.3);
+        }
+
+        /* HERO - ASYMMETRICAL EDITORIAL */
+        .hero {
+            min-height: 90vh; display: flex; align-items: center;
+            background: var(--bg-body);
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            /* Soft Gradient Orb */
+            content: ''; position: absolute; top: -10%; right: -10%;
+            width: 600px; height: 600px; background: radial-gradient(circle, rgba(229, 219, 196, 0.4) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none;
+        }
+
+        /* CARDS (SOFT/ORGANIC) */
+        .soft-card {
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--soft-shadow);
+            border: 1px solid rgba(255,255,255,0.5);
+            transition: transform 0.5s ease;
+        }
+        .soft-card:hover { transform: translateY(-10px); }
+
+        /* PROBLEM SECTION (MANIFESTO STYLE) */
+        .manifesto-box {
+            max-width: 700px; margin: 0 auto; text-align: center;
+        }
+
+        /* TRUTH GRID (SIDE BY SIDE SOFT) */
+        .truth-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem; }
+        .truth-list li { 
+            display: flex; gap: 15px; align-items: center; 
+            border-bottom: 1px solid rgba(141, 163, 153, 0.2); 
+            padding: 1rem 0;
+        }
+        .truth-list i { color: var(--brand-primary); font-size: 0.8rem; }
+
+        /* MECHANISM (VERTICAL FLOW) */
+        .flow-container {
+            max-width: 800px; margin: 4rem auto 0;
+            position: relative;
+        }
+        .flow-container::before {
+            /* Vertical Line */
+            content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px;
+            background: var(--brand-primary); opacity: 0.3; transform: translateX(-50%);
+            z-index: 0;
+        }
+        .flow-step {
+            background: var(--bg-card); padding: 3rem; margin-bottom: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--soft-shadow);
+            position: relative; z-index: 1;
+            text-align: center;
+        }
+        
+        /* MANIFEST (DELIVERABLES) */
+        .manifest-container { 
+            background: var(--bg-panel); border-radius: var(--border-radius); padding: 5rem 3rem; 
+        }
+        .check-list { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .check-list li { position: relative; padding-left: 35px; color: var(--text-primary); font-family: var(--font-head); font-size: 1.2rem; }
+        .check-list li::before { 
+            content: '✦'; color: var(--text-gold); position: absolute; left: 0; top: 4px; font-size: 1rem; 
+        }
+
+        /* GUARANTEE (MINIMALIST BADGE) */
+        .guarantee-box { 
+            border: 1px solid var(--text-gold); background: #FFF; 
+            text-align: center; padding: 5rem 3rem; margin-top: 5rem; position: relative;
+            border-radius: 500px 500px 0 0; /* Arch Shape */
+        }
+        .guarantee-badge { 
+            font-family: var(--font-body); text-transform: uppercase; letter-spacing: 3px; 
+            color: var(--text-gold); font-size: 0.8rem; font-weight: 700; margin-bottom: 2rem; display: block;
+        }
+
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid rgba(141, 163, 153, 0.2); margin-bottom: 1.5rem; padding-bottom: 1rem; }
+        .faq-question { 
+            width: 100%; text-align: left; background: none; border: none; padding: 1rem 0; 
+            color: var(--text-primary); font-family: var(--font-head); font-size: 1.3rem; 
+            cursor: pointer; display: flex; justify-content: space-between; align-items: center; 
+        }
+        .faq-question::after { content: '+'; font-size: 1.5rem; color: var(--brand-primary); font-weight: 300; transition: 0.5s; }
+        .faq-item.active .faq-question::after { content: '-'; transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; color: var(--text-muted); padding-right: 2rem; }
+        .faq-item.active .faq-answer { max-height: 500px; padding-bottom: 1rem; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .truth-grid, .check-list { grid-template-columns: 1fr; gap: 2rem; }
+            .flow-container::before { left: 20px; }
+            .flow-step { text-align: left; padding-left: 2rem; }
+            h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="container">
+            <div style="max-width: 650px;" data-aos="fade-right">
+                <span class="uppercase">For The Woman Who Has Everything, Except Herself...</span>
+                <h1>Success Shouldn't Feel Like <span class="text-brand">Suffocation.</span></h1>
+                <h3 class="shimmer-text" style="font-family: var(--font-body); font-weight: 300; margin-bottom: 2rem;">RETURN TO YOUR NATURAL RHYTHM.</h3>
+                
+                <p>
+                    You have climbed the mountain, but the view feels empty. You don't need another strategy, another KPI, or another hustle. You need to remember who you were before the world told you who to be.
+                </p>
+                
+                <br>
+                <a href="#apply" class="btn-brand">BEGIN THE ALIGNMENT</a>
+                <p style="font-size: 0.8rem; margin-top: 2rem; opacity: 0.6; font-style: italic;">Space held for 4 women this season.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container manifesto-box" data-aos="fade-up">
+            <h2>The Heaviest Burden is a Life That Doesn't Fit.</h2>
+            <p class="italic" style="color: var(--text-gold);">You are carrying the weight of "Should."</p>
+            
+            <div style="margin-top: 4rem; text-align: left;">
+                <div class="soft-card" style="margin-bottom: 2rem;">
+                    <h3>The Mask</h3>
+                    <p>You show up powerful in the boardroom, but collapse in the car. The disconnect is draining your soul.</p>
+                </div>
+                <div class="soft-card" style="margin-bottom: 2rem;">
+                    <h3>The Numbness</h3>
+                    <p>Achievements that used to light you up now feel like items on a checklist. You are successful, but you are not alive.</p>
+                </div>
+                <div class="soft-card">
+                    <h3>The Fear</h3>
+                    <p>You worry that if you stop pushing, everything you've built will crumble. So you keep running on a treadmill you hate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--bg-panel);">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <h2>It Is Not A Strategy Problem. <br> <span class="italic text-brand">It Is An Energy Problem.</span></h2>
+                <p>You cannot "think" your way out of a disconnect you "feel."</p>
+            </div>
+
+            <div class="truth-grid">
+                <div class="soft-card" data-aos="fade-right">
+                    <span class="uppercase">The Old Paradigm (Force)</span>
+                    <ul class="truth-list">
+                        <li><i class="fa-solid fa-circle"></i> Pushing through exhaustion.</li>
+                        <li><i class="fa-solid fa-circle"></i> Validation from external wins.</li>
+                        <li><i class="fa-solid fa-circle"></i> Rigid structures and rules.</li>
+                        <li><i class="fa-solid fa-circle"></i> Living in your head.</li>
+                    </ul>
+                </div>
+                <div class="soft-card" style="border: 1px solid var(--brand-primary);" data-aos="fade-left">
+                    <span class="uppercase text-brand">The New Paradigm (Flow)</span>
+                    <ul class="truth-list">
+                        <li><i class="fa-solid fa-star"></i> Allowing ease and intuition.</li>
+                        <li><i class="fa-solid fa-star"></i> Validation from internal peace.</li>
+                        <li><i class="fa-solid fa-star"></i> Fluid rhythms and seasons.</li>
+                        <li><i class="fa-solid fa-star"></i> Living in your body.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="uppercase">The Process</span>
+                <h1 class="text-brand">The Quantum Alignment Shift</h1>
+                <p>A journey from the Head to the Heart.</p>
+            </div>
+            
+            <div class="flow-container">
+                <div class="flow-step" data-aos="fade-up" data-aos-delay="0">
+                    <h3>Phase 1: Release (The Detox)</h3>
+                    <p>We gently dismantle the layers of expectation, perfectionism, and "good girl" conditioning that have kept you small. We clear the noise so you can hear your own voice again.</p>
+                </div>
+                <div class="flow-step" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Phase 2: Reconnect (The Awakening)</h3>
+                    <p>We plug you back into your intuition. You learn to make decisions not from fear or logic, but from a deep, knowing resonance. Your body becomes your compass.</p>
+                </div>
+                <div class="flow-step" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Phase 3: Radiate (The Embodiment)</h3>
+                    <p>You don't just "know" your truth; you live it. You lead your business, love your family, and move through the world with a magnetic ease that attracts rather than chases.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--bg-panel);">
+        <div class="container text-center" style="max-width: 800px;" data-aos="fade-up">
+            <h2 class="italic">I Was The CEO Of My Own Misery.</h2>
+            <div style="width: 50px; height: 1px; background: var(--text-gold); margin: 2rem auto;"></div>
+            <p>Ten years ago, I had the title, the salary, and the corner office. I also had panic attacks in the bathroom and a soul that was screaming for air. I left the corporate ladder to build a ladder to my own spirit. Now, I guide women like you back home to themselves.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div style="margin-bottom: 3rem; text-align: center;">
+                <h2>A Sanctuary For Your Soul.</h2>
+                <p>Not a "program." A container for transformation.</p>
+            </div>
+
+            <div class="manifest-container" data-aos="fade-up">
+                <ul class="check-list">
+                    <li>The Weekly Alchemy Calls</li>
+                    <li>The "Sacred Morning" Rituals</li>
+                    <li>The Somatic Release Library</li>
+                    <li>The Intuition Activation Deck</li>
+                    <li>Direct Access to Sarah</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container" style="max-width: 800px;">
+            <div class="guarantee-box" data-aos="fade-up">
+                <span class="guarantee-badge">The Soul Resonance Promise</span>
+                
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">
+                    Trust Your Knowing.
+                </h3>
+                
+                <p>
+                    If you step into this container and feel within the first 14 days that our energies are not aligned, simply tell me. I will release you with love and a full refund. Your peace is my priority, not your payment.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--bg-panel);">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="text-center" style="margin-bottom: 3rem;">Gentle Clarity</h2>
+            
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">Is this "woo-woo" or practical?</button>
+                <div class="faq-answer">
+                    It is grounded spirituality. We deal with energy, yes, but the results show up in your bank account, your relationships, and your calendar.
+                </div>
+            </div>
+            
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">I don't have time to meditate for hours.</button>
+                <div class="faq-answer">
+                    You don't need to. We integrate "micro-moments" of connection into your busy day. A shift in presence takes seconds, not hours.
+                </div>
+            </div>
+            
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">Will I lose my ambition?</button>
+                <div class="faq-answer">
+                    No. You will purify it. Ambition from fear burns you out. Ambition from alignment fuels you up. You will likely achieve more, but with half the effort.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-top: 0; border-bottom: none; text-align: center;">
+        <div class="container" data-aos="fade-up">
+            <p class="italic" style="margin-bottom: 2rem;">
+                <strong>P.S.</strong> You can spend another year pushing that boulder up the hill, or you can let go and let the river carry you. The flow is waiting.
+            </p>
+
+            <h1 class="text-brand" style="font-size: 4rem;">Come Home To Yourself.</h1>
+            
+            <div style="margin-top: 3rem;">
+                <a href="#apply" class="btn-brand">BEGIN THE ALIGNMENT</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Profile A: "Smooth" (Ethereal) Physics
+        AOS.init({ 
+            duration: 1500, 
+            easing: 'ease-in-out-sine', 
+            once: true, 
+            offset: 100 
+        });
+
+        const questions = document.querySelectorAll('.faq-question');
+        questions.forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

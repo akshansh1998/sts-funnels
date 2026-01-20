@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Diagnostic | The Soul Alchemist</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* --- BRAND DNA --- */
+        :root {
+            --bg-body: #F9F7F2;
+            --bg-card: #FFFFFF;
+            --text-primary: #4A4A4A;
+            --text-muted: #7A7A7A;
+            --text-gold: #C5A059;
+            --brand-primary: #8DA399;
+            --brand-dark: #6F827A;
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+            --soft-shadow: 0 20px 60px -10px rgba(141, 163, 153, 0.15);
+        }
+
+        /* --- BASE --- */
+        body { 
+            background-color: var(--bg-body); 
+            color: var(--text-primary); 
+            font-family: var(--font-body); 
+            min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            padding: 2rem;
+        }
+
+        /* --- PROGRESS HEADER --- */
+        .progress-container {
+            width: 100%; max-width: 600px; margin-bottom: 2rem; text-align: center;
+            opacity: 0; transition: opacity 0.5s; /* Hidden initially */
+        }
+        .progress-label {
+            font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; 
+            color: var(--text-gold); font-weight: 700; margin-bottom: 10px; display: block;
+        }
+        .progress-track {
+            width: 100%; height: 4px; background: rgba(0,0,0,0.05); border-radius: 10px; overflow: hidden;
+        }
+        .progress-fill {
+            width: 0%; height: 100%; background: var(--brand-primary); 
+            transition: width 0.5s ease;
+        }
+
+        /* --- QUESTION CARD --- */
+        .card-frame {
+            background: var(--bg-card); width: 100%; max-width: 700px;
+            padding: 3rem; border-radius: 20px;
+            box-shadow: var(--soft-shadow); border: 1px solid rgba(255,255,255,0.8);
+            position: relative; overflow: hidden; min-height: 400px;
+            display: flex; flex-direction: column; justify-content: center;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h2 {
+            font-family: var(--font-head); font-size: 2rem; margin-bottom: 1.5rem; 
+            color: var(--text-primary); text-align: center; line-height: 1.2;
+        }
+        p.intro-text {
+            text-align: center; color: var(--text-muted); font-size: 1.1rem; 
+            margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;
+        }
+
+        /* --- OPTIONS --- */
+        .options-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+        .option-btn {
+            background: #FAFAFA; border: 1px solid rgba(0,0,0,0.05);
+            padding: 1.5rem; border-radius: 12px; cursor: pointer;
+            display: flex; align-items: center; gap: 15px;
+            transition: all 0.3s ease; text-align: left;
+        }
+        .option-btn:hover {
+            border-color: var(--brand-primary); background: rgba(141, 163, 153, 0.05);
+            transform: translateX(5px);
+        }
+        .option-circle {
+            width: 20px; height: 20px; border-radius: 50%; border: 2px solid #DDD;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .option-btn:hover .option-circle { border-color: var(--brand-primary); }
+
+        /* --- BUTTONS --- */
+        .btn-brand {
+            padding: 18px 40px; border-radius: 50px;
+            background: var(--brand-primary); color: white;
+            font-family: var(--font-body); font-weight: 700; 
+            border: none; cursor: pointer;
+            letter-spacing: 2px; text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(141, 163, 153, 0.3); 
+            transition: all 0.3s ease;
+            display: inline-flex; align-items: center; gap: 10px;
+        }
+        .btn-brand:hover { transform: translateY(-2px); background: var(--brand-dark); }
+
+        /* --- INTRO SLIDE SPECIFIC --- */
+        .success-icon {
+            font-size: 3rem; color: var(--brand-primary); margin-bottom: 1.5rem;
+            background: rgba(141, 163, 153, 0.1); width: 80px; height: 80px;
+            display: flex; align-items: center; justify-content: center; border-radius: 50%;
+            margin-left: auto; margin-right: auto;
+        }
+
+        /* --- LOADING OVERLAY --- */
+        .loading-overlay {
+            position: absolute; inset: 0; background: var(--bg-card);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.5s; z-index: 10;
+        }
+        .loading-overlay.active { opacity: 1; pointer-events: all; }
+        .spinner {
+            width: 50px; height: 50px; border: 3px solid rgba(141, 163, 153, 0.2);
+            border-top-color: var(--brand-primary); border-radius: 50%;
+            animation: spin 1s linear infinite; margin-bottom: 1.5rem;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+    </style>
+</head>
+<body>
+
+    <div class="progress-container" id="p-container">
+        <span class="progress-label">Step 1 of 3: The Energy Audit</span>
+        <div class="progress-track"><div class="progress-fill" id="p-bar"></div></div>
+    </div>
+
+    <div class="card-frame" data-aos="zoom-in" data-aos-delay="100">
+        
+        <div class="loading-overlay" id="loading-screen">
+            <div class="spinner"></div>
+            <h3 style="font-family: var(--font-head); font-size: 1.5rem;">Generating Blueprint...</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Connecting to your customized path.</p>
+        </div>
+
+        <div id="step-0" style="text-align: center;">
+            <div class="success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h2>Your Guide is on its way.</h2>
+            <p class="intro-text">
+                Check your inbox in 5 minutes for the "Golden Cage Detox."<br><br>
+                <strong>Important:</strong> This guide works best when tailored to your specific energy type. Let's create your customized profile now.
+            </p>
+            <button class="btn-brand" onclick="startDiagnostic()">
+                Start My Diagnostic <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <p style="font-size: 0.75rem; margin-top: 1.5rem; color: var(--text-muted);">Takes 60 seconds • 100% Private</p>
+        </div>
+
+        <div id="q1" style="display: none;">
+            <h2>Where do you feel the <br> <span style="color: var(--brand-primary); font-style: italic;">heaviest weight</span> right now?</h2>
+            <div class="options-grid">
+                <div class="option-btn" onclick="nextStep(2)">
+                    <div class="option-circle"></div>
+                    <span><strong>The Chest:</strong> Anxiety, panic, and shallow breathing.</span>
+                </div>
+                <div class="option-btn" onclick="nextStep(2)">
+                    <div class="option-circle"></div>
+                    <span><strong>The Shoulders:</strong> Carrying the responsibility for everyone else.</span>
+                </div>
+                <div class="option-btn" onclick="nextStep(2)">
+                    <div class="option-circle"></div>
+                    <span><strong>The Head:</strong> Overthinking, strategy loops, and insomnia.</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="q2" style="display: none;">
+            <h2>What is your current relationship with <br> <span style="color: var(--brand-primary); font-style: italic;">Success?</span></h2>
+            <div class="options-grid">
+                <div class="option-btn" onclick="nextStep(3)">
+                    <div class="option-circle"></div>
+                    <span><strong>The Golden Cage:</strong> I have money, but I feel trapped.</span>
+                </div>
+                <div class="option-btn" onclick="nextStep(3)">
+                    <div class="option-circle"></div>
+                    <span><strong>The Feast & Famine:</strong> High highs, crashing lows.</span>
+                </div>
+                <div class="option-btn" onclick="nextStep(3)">
+                    <div class="option-circle"></div>
+                    <span><strong>The Imposter:</strong> Waiting for them to find out I'm faking it.</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="q3" style="display: none;">
+            <h2>If you could wave a wand and change <br> <span style="color: var(--brand-primary); font-style: italic;">one thing</span> in 90 days?</h2>
+            <div class="options-grid">
+                <div class="option-btn" onclick="finishSurvey()">
+                    <div class="option-circle"></div>
+                    <span><strong>Deep Peace:</strong> To work without the adrenaline spike.</span>
+                </div>
+                <div class="option-btn" onclick="finishSurvey()">
+                    <div class="option-circle"></div>
+                    <span><strong>True Alignment:</strong> To do work that feels like my soul's purpose.</span>
+                </div>
+                <div class="option-btn" onclick="finishSurvey()">
+                    <div class="option-circle"></div>
+                    <span><strong>Feminine Flow:</strong> To receive abundance instead of chasing it.</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Step 0 -> Step 1
+        function startDiagnostic() {
+            document.getElementById('step-0').style.display = 'none';
+            document.getElementById('q1').style.display = 'block';
+            document.getElementById('p-container').style.opacity = '1';
+            document.getElementById('p-bar').style.width = "33%";
+        }
+
+        // Logic for questions
+        function nextStep(stepNum) {
+            const bar = document.getElementById('p-bar');
+            const label = document.querySelector('.progress-label');
+            
+            if(stepNum === 2) {
+                bar.style.width = "66%";
+                label.innerText = "Step 2 of 3: The Pattern";
+                document.getElementById('q1').style.display = 'none';
+                document.getElementById('q2').style.display = 'block';
+            }
+            if(stepNum === 3) {
+                bar.style.width = "90%";
+                label.innerText = "Step 3 of 3: The Desire";
+                document.getElementById('q2').style.display = 'none';
+                document.getElementById('q3').style.display = 'block';
+            }
+        }
+
+        function finishSurvey() {
+            document.getElementById('q3').style.display = 'none';
+            document.getElementById('loading-screen').classList.add('active');
+            document.getElementById('p-bar').style.width = "100%";
+            document.querySelector('.progress-label').innerText = "Finalizing Profile...";
+
+            setTimeout(() => {
+                window.location.href = "results.html"; 
+            }, 2000);
+        }
+    </script>
+    <script src="../funnel-nav.js"></script>
+</body>
+</html>

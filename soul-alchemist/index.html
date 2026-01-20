@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Golden Cage Detox | The Soul Alchemist</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* --- BRAND DNA (Global Source of Truth) --- */
+        :root {
+            --bg-body: #F9F7F2;       /* Cream */
+            --bg-card: #FFFFFF;       /* White */
+            --text-primary: #4A4A4A;  /* Charcoal */
+            --text-muted: #7A7A7A;    /* Soft Grey */
+            --text-gold: #C5A059;     /* Muted Gold */
+            --brand-primary: #8DA399; /* Sage Green */
+            --brand-dark: #6F827A;    /* Darker Sage for Hover */
+            
+            --soft-shadow: 0 20px 60px -10px rgba(141, 163, 153, 0.2);
+            --border-radius: 20px;
+            
+            --font-head: 'Playfair Display', serif; 
+            --font-body: 'Lato', sans-serif;
+        }
+
+        /* --- RESET & BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--bg-body); 
+            color: var(--text-primary); 
+            font-family: var(--font-body); 
+            line-height: 1.6; 
+            overflow-x: hidden; 
+        }
+
+        /* --- LAYOUT WRAPPER --- */
+        .main-wrapper {
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            padding: 2rem;
+            background: radial-gradient(circle at top right, rgba(229, 219, 196, 0.3) 0%, transparent 60%);
+        }
+
+        .split-container {
+            max-width: 1200px; width: 100%;
+            display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem;
+            align-items: center;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-family: var(--font-head); font-size: 3.5rem; 
+            color: var(--text-primary); margin-bottom: 1.5rem; 
+            line-height: 1.1; font-weight: 400;
+        }
+        .italic-accent { font-style: italic; color: var(--brand-primary); }
+        
+        p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; font-weight: 300; }
+
+        .micro-label {
+            display: inline-block; 
+            text-transform: uppercase; letter-spacing: 3px; font-size: 0.75rem; 
+            color: var(--text-gold); font-weight: 700; margin-bottom: 1rem;
+            border-bottom: 1px solid var(--text-gold); padding-bottom: 5px;
+        }
+
+        /* --- FORM CARD --- */
+        .form-card {
+            background: var(--bg-card); padding: 3.5rem; 
+            border-radius: var(--border-radius);
+            box-shadow: var(--soft-shadow);
+            border: 1px solid rgba(255,255,255,0.8);
+            position: relative;
+        }
+        
+        /* Decorative Leaf */
+        .form-card::after {
+            content: '✦'; position: absolute; top: 20px; right: 20px;
+            color: var(--text-gold); opacity: 0.4; font-size: 1.5rem;
+        }
+
+        .input-group { margin-bottom: 1.5rem; position: relative; }
+        .input-group i {
+            position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
+            color: var(--brand-primary); opacity: 0.6;
+        }
+        
+        .input-field {
+            width: 100%; padding: 18px 20px 18px 50px; border-radius: 50px;
+            border: 1px solid rgba(0,0,0,0.08); background: #FAFAFA;
+            font-family: var(--font-body); font-size: 1rem; color: var(--text-primary);
+            transition: 0.3s;
+        }
+        .input-field:focus { 
+            outline: none; border-color: var(--brand-primary); background: #FFF; 
+            box-shadow: 0 0 0 4px rgba(141, 163, 153, 0.1);
+        }
+
+        /* --- BUTTON --- */
+        .btn-brand {
+            width: 100%; padding: 22px; border-radius: 50px;
+            background: var(--brand-primary); color: white;
+            font-family: var(--font-body); font-weight: 700; 
+            border: none; cursor: pointer;
+            letter-spacing: 2px; text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(141, 163, 153, 0.3); 
+            transition: all 0.4s ease;
+            position: relative; overflow: hidden;
+        }
+        .btn-brand:hover { 
+            transform: translateY(-3px); 
+            background: var(--brand-dark); 
+            box-shadow: 0 15px 40px rgba(141, 163, 153, 0.4);
+        }
+
+        /* --- LIST --- */
+        .benefit-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 2rem; }
+        .benefit-item { display: flex; align-items: center; gap: 15px; font-size: 1rem; color: var(--text-primary); }
+        .benefit-item i { color: var(--brand-primary); background: rgba(141, 163, 153, 0.15); padding: 5px; border-radius: 50%; font-size: 0.8rem; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .split-container { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+            h1 { font-size: 2.5rem; }
+            .form-card { padding: 2rem; }
+            .benefit-list { align-items: center; } /* Center list on mobile */
+            .input-group { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <div class="split-container">
+            
+            <div class="copy-side" data-aos="fade-right">
+                <span class="micro-label">Free Audio Guide</span>
+                
+                <h1>
+                    Success Should Not Feel Like <br> 
+                    <span class="italic-accent">Suffocation.</span>
+                </h1>
+                
+                <p>
+                    You have climbed the mountain, only to find the air is too thin to breathe. You don't need to burn your business down to find peace. You simply need to release the weight of "Should."
+                </p>
+
+                <div class="benefit-list">
+                    <div class="benefit-item">
+                        <i class="fa-solid fa-check"></i> 
+                        <span><strong>The 5-Minute "Detox" Audio:</strong> Reset your nervous system instantly.</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fa-solid fa-check"></i> 
+                        <span><strong>The "Should" Inventory:</strong> Identify exactly where you are leaking energy.</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fa-solid fa-check"></i> 
+                        <span><strong>The Morning Ritual:</strong> Reconnect with intuition before you check email.</span>
+                    </div>
+                </div>
+
+                <div style="opacity: 0.6; font-size: 0.9rem; font-style: italic;">
+                    "This guide saved my sanity during my launch." — Jessica R., CEO
+                </div>
+            </div>
+
+            <div class="form-side" data-aos="fade-up" data-aos-delay="200">
+                <div class="form-card">
+                    <h3 style="font-family: var(--font-head); color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">
+                        Where should we send it?
+                    </h3>
+                    
+                    <form action="assessment.html">
+                        <div class="input-group">
+                            <i class="fa-regular fa-user"></i>
+                            <input type="text" class="input-field" placeholder="Your First Name" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="email" class="input-field" placeholder="Your Best Email Address" required>
+                        </div>
+                        
+                        <button type="submit" class="btn-brand">
+                            SEND ME THE DETOX <i class="fa-solid fa-arrow-right" style="margin-left: 10px; font-size: 0.8rem;"></i>
+                        </button>
+                    </form>
+                    
+                    <p style="font-size: 0.75rem; margin-top: 1.5rem; opacity: 0.5; text-align: center; margin-bottom: 0;">
+                        <i class="fa-solid fa-lock"></i> 100% Secure. We honor your inbox.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ 
+            duration: 1200, 
+            easing: 'ease-out-cubic', 
+            once: true 
+        });
+    </script>
+    <script src="../funnel-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve Your Session | The Soul Alchemist</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* --- BRAND DNA --- */
+        :root {
+            --bg-body: #F9F7F2;
+            --bg-card: #FFFFFF;
+            --text-primary: #4A4A4A;
+            --text-muted: #7A7A7A;
+            --text-gold: #C5A059;
+            --brand-primary: #8DA399;
+            --brand-dark: #6F827A;
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+            --soft-shadow: 0 20px 60px -10px rgba(141, 163, 153, 0.15);
+        }
+
+        /* --- BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--bg-body); 
+            color: var(--text-primary); 
+            font-family: var(--font-body); 
+            min-height: 100vh;
+        }
+
+        /* --- LAYOUT --- */
+        .split-layout {
+            display: grid; grid-template-columns: 350px 1fr; 
+            min-height: 100vh;
+        }
+
+        /* --- SIDEBAR (THE COVENANT) --- */
+        .sidebar {
+            background: #F4F1ED; border-right: 1px solid rgba(0,0,0,0.05);
+            padding: 4rem 2rem;
+            display: flex; flex-direction: column; justify-content: flex-start;
+        }
+
+        .rule-item { margin-bottom: 2rem; display: flex; gap: 15px; }
+        .rule-num { 
+            font-family: var(--font-head); color: var(--text-gold); font-size: 1.2rem; font-weight: 700;
+            border-right: 1px solid var(--text-gold); padding-right: 15px; height: fit-content;
+        }
+        .rule-content h4 { font-family: var(--font-head); font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .rule-content p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+        /* --- MAIN STAGE (CALENDAR) --- */
+        .main-stage {
+            padding: 4rem; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+        }
+
+        h1 { font-family: var(--font-head); font-size: 2.5rem; margin-bottom: 1rem; text-align: center; }
+        .subtitle { text-align: center; color: var(--text-muted); margin-bottom: 3rem; max-width: 500px; }
+
+        /* --- CALENDAR CONTAINER --- */
+        .calendar-wrapper {
+            width: 100%; max-width: 800px; height: 600px;
+            background: var(--bg-card); border-radius: 20px;
+            box-shadow: var(--soft-shadow);
+            border: 1px solid rgba(141, 163, 153, 0.2);
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .split-layout { grid-template-columns: 1fr; }
+            .sidebar { padding: 3rem 2rem; order: 2; }
+            .main-stage { padding: 3rem 1rem; order: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="split-layout">
+        
+        <div class="sidebar" data-aos="fade-right">
+            <div style="margin-bottom: 3rem;">
+                <span style="font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-gold); font-weight: 700;">
+                    Before You Book
+                </span>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-num">01</div>
+                <div class="rule-content">
+                    <h4>Sacred Space</h4>
+                    <p>Please ensure you are in a private, quiet room. Do not take this call from a car, a cafe, or while multitasking.</p>
+                </div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-num">02</div>
+                <div class="rule-content">
+                    <h4>Radical Honesty</h4>
+                    <p>We can only heal what we reveal. Come prepared to look at your business and energy with complete transparency.</p>
+                </div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-num">03</div>
+                <div class="rule-content">
+                    <h4>Honor The Time</h4>
+                    <p>This is a reserved slot in my calendar. Cancellations within 24 hours will result in a forfeiture of future booking privileges.</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: auto; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.05);">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="width: 50px; height: 50px; background: #E5DBC4; border-radius: 50%;"></div> <div>
+                        <div style="font-family: var(--font-head); font-weight: 700;">Sarah</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">The Soul Alchemist</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-stage">
+            <h1 data-aos="fade-down">Initialize Your Alignment</h1>
+            <p class="subtitle" data-aos="fade-up" data-aos-delay="100">
+                Select a time for your 45-minute Strategy Session. We will review your diagnostic results and build your roadmap.
+            </p>
+
+            <div class="calendar-wrapper" data-aos="zoom-in" data-aos-delay="200">
+                <div style="text-align: center;">
+                    <i class="fa-solid fa-spinner fa-spin" style="font-size: 2rem; color: var(--brand-primary); margin-bottom: 1rem;"></i>
+                    <p style="font-family: var(--font-body); color: var(--text-muted);">Loading Secure Calendar...</p>
+                    <button onclick="window.location.href='thank-you.html'" style="margin-top: 2rem; padding: 10px 20px; background: #eee; border: none; cursor: pointer; font-size: 0.8rem;">
+                        [Simulate Booking Success]
+                    </button>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem; font-size: 0.8rem; color: var(--text-muted); display: flex; gap: 20px;">
+                <span><i class="fa-solid fa-lock" style="color: var(--brand-primary);"></i> SSL Secure</span>
+                <span><i class="fa-solid fa-video" style="color: var(--brand-primary);"></i> Zoom Video</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+    
+    <script src="../funnel-nav.js"></script>
+</body>
+</html>

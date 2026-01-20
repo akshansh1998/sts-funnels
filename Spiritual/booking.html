@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Clarity Call | The Soul Alchemist</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* --- 1. INHERITED DNA (Exact copy from Sales Page) --- */
+        :root {
+            /* BACKGROUNDS (Cream/Soft) */
+            --bg-body: #F9F7F2; 
+            --bg-panel: #F2EFE9; 
+            --bg-card: #FFFFFF;
+            
+            /* TEXT COLORS */
+            --text-primary: #4A4A4A; 
+            --text-muted: #7A7A7A;
+            --text-gold: #C5A059;
+
+            /* BRAND IDENTITY */
+            --brand-primary: #8DA399;  /* Sage Green */
+            --brand-glow: rgba(141, 163, 153, 0.2); 
+            --soft-shadow: 0 20px 40px -10px rgba(141, 163, 153, 0.15);
+            
+            /* TYPOGRAPHY */
+            --font-head: 'Playfair Display', serif; 
+            --font-body: 'Lato', sans-serif;
+            
+            --border-radius: 30px; /* Pill Shapes */
+        }
+
+        /* --- 2. BASE RESET --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.8;
+            overflow-x: hidden;
+            font-size: 17px;
+            /* Center the whole page visually on huge screens */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* --- 3. LAYOUT (FIXED WIDTH CONSTRAINT) --- */
+        .main-wrapper {
+            width: 100%;
+            max-width: 1400px; /* Prevents infinite stretching on large monitors */
+            background: var(--bg-card);
+            box-shadow: 0 0 100px rgba(0,0,0,0.03); /* Subtle depth */
+            margin: 0 auto;
+            overflow: hidden; /* Keeps borders clean */
+        }
+
+        .split-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr; /* Asymmetrical Editorial Balance */
+            min-height: 90vh; /* Keeps it tall but not forced 100vh if content is long */
+        }
+
+        /* LEFT PANEL (Context) */
+        .context-panel {
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; /* Ensures left alignment */
+            background: var(--bg-panel);
+            position: relative;
+        }
+        
+        /* CONTENT CONSTRAINER (Fixes the "Spacing" issue) */
+        .content-box {
+            max-width: 500px; /* Keeps text readable line-length */
+            margin: 0 auto; /* Centers it within the panel */
+        }
+        
+        /* RIGHT PANEL (Calendar) */
+        .calendar-panel {
+            padding: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-body);
+        }
+
+        /* --- 4. TYPOGRAPHY --- */
+        h1 {
+            font-family: var(--font-head);
+            font-size: 3rem;
+            color: var(--brand-primary);
+            margin-bottom: 1rem;
+            font-style: italic;
+            line-height: 1.2;
+        }
+        h2 { font-family: var(--font-head); font-size: 1.5rem; margin-bottom: 1.5rem; }
+        p { color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem; }
+        
+        .shimmer-text {
+            background: linear-gradient(110deg, var(--text-gold) 30%, #E6D2A8 50%, var(--text-gold) 70%);
+            background-size: 200% auto;
+            color: transparent; -webkit-background-clip: text; background-clip: text;
+            animation: shine 6s ease-in-out infinite;
+        }
+        @keyframes shine { to { background-position: 200% center; } }
+
+        /* --- 5. COMPONENTS --- */
+        /* The Calendar Frame (Soft Card) */
+        .calendar-frame {
+            width: 100%;
+            max-width: 650px;
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            box-shadow: var(--soft-shadow);
+            padding: 1rem;
+            min-height: 650px;
+            border: 1px solid rgba(141, 163, 153, 0.2);
+            /* This is where your GHL Embed goes */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Expectations List */
+        .expectations-list { list-style: none; padding: 0; }
+        .expectations-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 1rem;
+            font-family: var(--font-head);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+        }
+        .expectations-list li::before {
+            content: '✦'; 
+            color: var(--text-gold); 
+            position: absolute; left: 0; top: 4px;
+        }
+
+        /* Profile Pill */
+        .profile-pill {
+            display: flex; align-items: center; gap: 15px;
+            background: var(--bg-card);
+            padding: 8px 20px;
+            border-radius: 50px;
+            width: fit-content;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .avatar-circle {
+            width: 32px; height: 32px; border-radius: 50%;
+            background: var(--brand-primary);
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-family: var(--font-head); font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .split-container { grid-template-columns: 1fr; }
+            .context-panel { padding: 4rem 2rem; text-align: center; align-items: center; }
+            .content-box { max-width: 100%; }
+            .calendar-panel { padding: 2rem; }
+            h1 { font-size: 2.5rem; }
+            .expectations-list { text-align: left; display: inline-block; }
+            body { align-items: flex-start; } /* Allow scrolling on mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <div class="split-container">
+            
+            <div class="context-panel" data-aos="fade-right">
+                <div class="content-box">
+                    
+                    <div class="profile-pill">
+                        <div class="avatar-circle">S</div>
+                        <span style="font-family: var(--font-body); font-weight: 700; color: var(--text-primary); font-size: 0.9rem;">Call with Sarah</span>
+                    </div>
+
+                    <h1>Let’s Explore <br> <span class="shimmer-text">The Possibility.</span></h1>
+                    
+                    <p>
+                        This is not a sales pitch. This is a sacred space to explore if our energies align for the 12-week container.
+                    </p>
+
+                    <div style="width: 50px; height: 1px; background: var(--text-gold); margin: 1.5rem 0;"></div>
+
+                    <h2>Before We Speak:</h2>
+                    <ul class="expectations-list">
+                        <li>Please arrive in a quiet, grounded space.</li>
+                        <li>Review the "Manifest" sent to your email.</li>
+                        <li>Be ready to be honest about your blocks.</li>
+                        <li>Understand this is an investment in your soul.</li>
+                    </ul>
+
+                    <div style="margin-top: 3rem; opacity: 0.7;">
+                        <p style="font-size: 0.9rem; font-style: italic; margin-bottom: 0;">
+                            "The cave you fear to enter holds the treasure you seek."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calendar-panel">
+                <div class="calendar-frame" data-aos="fade-up" data-aos-delay="200">
+                    <div style="text-align: center;">
+                        <i class="fa-regular fa-calendar" style="font-size: 2.5rem; color: var(--brand-primary); margin-bottom: 1rem; opacity: 0.5;"></i>
+                        <p style="font-family: var(--font-body); color: var(--text-muted); font-size: 0.9rem;">
+                            [GHL Calendar Element Goes Here]
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Profile A: Smooth Physics (1500ms) - MATCHING PARENT
+        AOS.init({ 
+            duration: 1500, 
+            easing: 'ease-in-out-sine', 
+            once: true, 
+            offset: 50 
+        });
+    </script>
+</body>
+</html>

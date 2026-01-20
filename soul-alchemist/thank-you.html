@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Confirmed | The Soul Alchemist</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* --- BRAND DNA --- */
+        :root {
+            --bg-body: #F9F7F2;
+            --bg-card: #FFFFFF;
+            --text-primary: #4A4A4A;
+            --text-muted: #7A7A7A;
+            --text-gold: #C5A059;
+            --brand-primary: #8DA399;
+            --brand-dark: #6F827A;
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+            --soft-shadow: 0 20px 60px -10px rgba(141, 163, 153, 0.15);
+        }
+
+        body { 
+            background-color: var(--bg-body); 
+            color: var(--text-primary); 
+            font-family: var(--font-body); 
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            min-height: 100vh; padding: 2rem;
+        }
+
+        .confirmation-card {
+            background: var(--bg-card); padding: 4rem; border-radius: 20px;
+            box-shadow: var(--soft-shadow); text-align: center; max-width: 800px;
+            border: 1px solid rgba(141, 163, 153, 0.2);
+        }
+
+        .success-icon {
+            width: 100px; height: 100px; background: rgba(141, 163, 153, 0.1);
+            border-radius: 50%; margin: 0 auto 2rem; display: flex; align-items: center; justify-content: center;
+            color: var(--brand-primary); font-size: 3rem;
+            animation: pulse 2s infinite;
+        }
+
+        h1 { font-family: var(--font-head); font-size: 2.5rem; margin-bottom: 1rem; }
+        
+        /* --- STEPS GRID --- */
+        .steps-container {
+            display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-top: 3rem; text-align: left;
+        }
+        .step-item { padding: 1.5rem; background: #FAFAFA; border-radius: 10px; border: 1px solid rgba(0,0,0,0.03); }
+        .step-num { font-family: var(--font-head); color: var(--text-gold); font-weight: 700; font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .step-title { font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary); }
+        .step-desc { font-size: 0.9rem; color: var(--text-muted); }
+
+        .btn-brand {
+            margin-top: 3rem; padding: 18px 40px; border-radius: 50px;
+            background: var(--brand-primary); color: white;
+            font-family: var(--font-body); font-weight: 700; 
+            border: none; cursor: pointer; text-decoration: none; display: inline-block;
+            letter-spacing: 2px; text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(141, 163, 153, 0.3); 
+            transition: all 0.3s ease;
+        }
+        .btn-brand:hover { transform: translateY(-3px); background: var(--brand-dark); }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(141, 163, 153, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(141, 163, 153, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(141, 163, 153, 0); }
+        }
+
+        @media (max-width: 768px) {
+            .steps-container { grid-template-columns: 1fr; }
+            .confirmation-card { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="confirmation-card" data-aos="zoom-in">
+        <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+        <h1>Your Session is Confirmed.</h1>
+        <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+            I have received your application. The energetic container for our work together has officially opened.
+        </p>
+
+        <div class="steps-container">
+            <div class="step-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="step-num">01</div>
+                <div class="step-title">Check Your Email</div>
+                <div class="step-desc">A calendar invitation has been sent. Please accept it immediately to lock your slot.</div>
+            </div>
+            <div class="step-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="step-num">02</div>
+                <div class="step-title">The Pre-Work</div>
+                <div class="step-desc">I have attached a "Clarity Journal" to the email. Please spend 15 mins on it before we meet.</div>
+            </div>
+            <div class="step-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="step-num">03</div>
+                <div class="step-title">Arrive Early</div>
+                <div class="step-desc">The zoom room opens 2 minutes early. Take a few deep breaths before logging in.</div>
+            </div>
+        </div>
+
+        <a href="#" class="btn-brand">
+            <i class="fa-regular fa-calendar-plus" style="margin-right: 10px;"></i> ADD TO GOOGLE CALENDAR
+        </a>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+    
+    <script src="../funnel-nav.js"></script>
+</body>
+</html>

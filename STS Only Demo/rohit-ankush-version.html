@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System That Sells™ | Accelerator Access</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* --- 1. LUXURY VARIABLES --- */
+        :root {
+            --bg-dark: #050505; 
+            --bg-panel: #0E0E0E; 
+            --text-white: #FFFFFF;
+            --text-muted: #B0B0B0;
+            --gold: #D4AF37;
+            --gold-light: #F8E28B;
+            --glass-border: rgba(212, 175, 55, 0.25);
+            --font-head: 'Jost', sans-serif; 
+            --font-body: 'Montserrat', sans-serif;
+            --spacing-lg: 140px;
+        }
+
+        /* --- 2. BASE RESET --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            font-family: var(--font-body);
+            line-height: 1.7;
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+
+        /* FIXED: Removes default dots from all lists globally */
+        ul, ol { list-style: none; padding: 0; margin: 0; }
+
+        /* --- 3. TYPOGRAPHY --- */
+        h1, h2, h3, h4, h5 {
+            font-family: var(--font-head);
+            font-weight: 700; color: var(--text-white);
+            line-height: 1.15; margin-bottom: 1.5rem;
+        }
+        h1 { font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 800; text-transform: uppercase; letter-spacing: -1px; }
+        h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); letter-spacing: -0.5px; }
+        h3 { font-size: 1.6rem; font-weight: 600; }
+        
+        p, li { font-size: 1.125rem; color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 400; }
+        
+        .text-gold { color: var(--gold); }
+        .text-center { text-align: center; }
+        .uppercase { 
+            text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; 
+            font-weight: 800; color: var(--gold); margin-bottom: 1.5rem; display: block; 
+        }
+
+        /* SHIMMER EFFECT */
+        .shimmer-text {
+            background: linear-gradient(110deg, var(--gold) 40%, #fff 50%, var(--gold) 60%);
+            background-size: 200% auto;
+            color: transparent; -webkit-background-clip: text; background-clip: text;
+            animation: shine 4s ease-in-out infinite;
+        }
+        @keyframes shine { to { background-position: 200% center; } }
+
+        /* --- 4. LAYOUT COMPONENTS --- */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 2; }
+        section { padding: var(--spacing-lg) 0; position: relative; border-bottom: 1px solid rgba(255,255,255,0.03); }
+
+        /* BUTTONS */
+        .btn-gold {
+            display: inline-flex; /* Ensures perfect centering */
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--gold) 0%, #b39226 100%);
+            color: #000;
+            font-family: var(--font-head);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 24px 50px;
+            font-size: 1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 20px 50px -10px rgba(212, 175, 55, 0.4); }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh; display: flex; align-items: center; justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #151515 0%, #050505 80%);
+            padding-top: 80px;
+        }
+
+        /* COMPARISON MATRIX (Old vs New) */
+        .comparison-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+            margin-top: 4rem;
+        }
+        .compare-card {
+            padding: 3rem; border: 1px solid rgba(255,255,255,0.08);
+            background: var(--bg-panel); transition: 0.3s;
+        }
+        .compare-card.winner {
+            border: 1px solid var(--gold);
+            background: linear-gradient(180deg, rgba(212,175,55,0.05) 0%, rgba(0,0,0,0) 100%);
+        }
+        .compare-list li {
+            display: flex; gap: 15px; align-items: flex-start;
+            font-size: 1.05rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        .compare-list i { margin-top: 5px; }
+
+        /* MECHANISM GRID */
+        .mech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 4rem; }
+        .mech-card {
+            padding: 2.5rem; border: 1px solid var(--glass-border);
+            background: rgba(255,255,255,0.02); transition: 0.3s ease;
+        }
+        .mech-card:hover { border-color: var(--gold); background: rgba(255,255,255,0.05); transform: translateY(-5px); }
+        .mech-icon { font-size: 2rem; color: var(--gold); margin-bottom: 1.5rem; }
+
+        /* DELIVERABLES (The Manifest) */
+        .manifest-container {
+            background: var(--bg-panel);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 4rem;
+        }
+        .check-list { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .check-list li {
+            position: relative; padding-left: 35px; color: var(--text-white); 
+            font-weight: 500; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem;
+        }
+        .check-list li::before {
+            content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+            position: absolute; left: 0; top: 2px; color: var(--gold);
+        }
+
+        /* WHO THIS IS FOR (Velvet Rope) */
+        .velvet-rope-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .rope-column h3 { border-bottom: 2px solid #333; padding-bottom: 1rem; display: inline-block; margin-bottom: 2rem; }
+        .rope-column.yes h3 { border-color: var(--gold); color: var(--gold); }
+        .rope-column.no h3 { border-color: #555; color: #777; }
+        .rope-list li { padding-left: 30px; position: relative; }
+        .rope-column.yes li::before { content: '✓'; color: var(--gold); position: absolute; left: 0; font-weight: 800; }
+        .rope-column.no li::before { content: '✕'; color: #555; position: absolute; left: 0; font-weight: 800; }
+
+        /* AUTHORITY (Dual Brain) */
+        .founder-grid { 
+            display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; 
+            margin-top: 4rem; align-items: stretch;
+        }
+        .founder-card {
+            background: var(--bg-panel); padding: 3rem; border: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+        }
+        .founder-role {
+            font-family: var(--font-head); text-transform: uppercase; letter-spacing: 2px;
+            color: var(--gold); font-size: 0.8rem; font-weight: 700; margin-bottom: 1rem; display: block;
+        }
+        .synergy-box {
+            grid-column: 1 / -1; text-align: center; padding: 2rem; 
+            background: rgba(212, 175, 55, 0.05); border: 1px solid var(--gold); margin-top: 2rem;
+        }
+
+        /* ROI MATH */
+        .roi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center; margin-top: 4rem; }
+        .roi-card { background: var(--bg-panel); padding: 2rem; border: 1px solid rgba(255,255,255,0.1); }
+        .roi-num { font-size: 3rem; font-weight: 800; color: var(--gold); font-family: var(--font-head); line-height: 1; margin-bottom: 0.5rem; }
+
+        /* ROADMAP (Refined Alignment) */
+        .roadmap-container {
+            border-left: 3px solid rgba(212, 175, 55, 0.3);
+            margin-left: 20px;
+            padding-left: 50px;
+        }
+        .roadmap-item { position: relative; margin-bottom: 5rem; }
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            left: -61px; /* Center dot on border (50px padding + 3px border/2 + 20px width/2) */
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background: var(--bg-dark);
+            border: 4px solid var(--gold);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+            z-index: 2;
+        }
+
+        /* GUARANTEE */
+        .guarantee-box {
+            border: 1px solid var(--gold);
+            background: linear-gradient(180deg, rgba(212,175,55,0.08) 0%, transparent 100%);
+            text-align: center; padding: 5rem 3rem; position: relative; margin-top: 5rem;
+        }
+        .guarantee-badge {
+            position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
+            background: var(--bg-dark); border: 1px solid var(--gold); color: var(--gold);
+            font-family: var(--font-head); font-weight: 800; font-size: 0.9rem;
+            letter-spacing: 2px; padding: 8px 25px; text-transform: uppercase; white-space: nowrap;
+        }
+        .guarantee-icon {
+            font-size: 6rem; 
+            background: linear-gradient(135deg, #D4AF37 0%, #FFF 50%, #D4AF37 100%);
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+            margin-bottom: 2rem; filter: drop-shadow(0 0 25px rgba(212,175,55,0.4)); display: inline-block;
+        }
+
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 1rem; }
+        .faq-question {
+            width: 100%; text-align: left; background: none; border: none; padding: 1.5rem 0;
+            color: var(--text-white); font-family: var(--font-head); font-size: 1.2rem;
+            font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+        }
+        .faq-question::after { content: '+'; font-size: 1.5rem; color: var(--gold); transition: 0.3s; }
+        .faq-item.active .faq-question::after { content: '-'; transform: rotate(180deg); }
+        .faq-answer {
+            max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;
+            color: var(--text-muted); font-size: 1rem; padding-right: 2rem;
+        }
+        .faq-item.active .faq-answer { max-height: 500px; padding-bottom: 1.5rem; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .comparison-grid, .manifest-container .check-list, .velvet-rope-grid, .founder-grid, .roi-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .manifest-container { padding: 2rem; }
+            h1 { font-size: 2.5rem; }
+            .section-spacing { padding: 80px 0; }
+            .check-list li { font-size: 1rem; }
+            
+            /* Mobile Roadmap Fixes */
+            .roadmap-container { padding-left: 30px; }
+            .roadmap-item::before { 
+                left: -40px; /* Precise adjustment for mobile line */
+                width: 16px; 
+                height: 16px; 
+                top: 6px; 
+                border-width: 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="container" data-aos="fade-up">
+            <h4 class="uppercase">For Coaches Who Have Proof…</h4>
+            <h1>But Still Can’t Predict Their <br> <span class="shimmer-text">Next High-Ticket Client</span></h1>
+            
+            <p style="max-width: 800px; margin: 2rem auto; font-size: 1.2rem;">
+                Stop relying on "hope marketing," manual DMs, and exhausting launches. 
+                <br>We install a complete, AI-powered client acquisition infrastructure into your business in 14 days.
+            </p>
+            
+            <a href="#apply" class="btn-gold">Apply For Accelerator Access</a>
+            <p style="font-size: 0.85rem; margin-top: 1.5rem; opacity: 0.6; letter-spacing: 1px;">LIMITED SPOTS FOR DECEMBER COHORT</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="text-center" style="max-width: 800px; margin: 0 auto;" data-aos="fade-up">
+                <h2>Let’s Start With the Truth Most Coaches Never Say Out Loud</h2>
+                <h3 style="color: white; font-weight: 400; opacity: 0.9;">It’s not your skill. It’s the architecture your business runs on.</h3>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="compare-card" data-aos="fade-right">
+                    <h3 class="text-muted" style="margin-bottom: 1.5rem;">THE MANUAL GRIND</h3>
+                    <ul class="compare-list">
+                        <li><i class="fa-solid fa-xmark text-muted"></i> <span>Revenue rollercoasters (Feast or Famine).</span></li>
+                        <li><i class="fa-solid fa-xmark text-muted"></i> <span>Spending 4+ hours/day in DMs hunting leads.</span></li>
+                        <li><i class="fa-solid fa-xmark text-muted"></i> <span>Sales calls with people who can't afford you.</span></li>
+                        <li><i class="fa-solid fa-xmark text-muted"></i> <span>"Launch Anxiety" every single month.</span></li>
+                        <li><i class="fa-solid fa-xmark text-muted"></i> <span>You are the bottleneck. If you stop, revenue stops.</span></li>
+                    </ul>
+                </div>
+                <div class="compare-card winner" data-aos="fade-left">
+                    <h3 class="text-gold" style="margin-bottom: 1.5rem;">THE SYSTEM OWNER</h3>
+                    <ul class="compare-list">
+                        <li><i class="fa-solid fa-check text-gold"></i> <span>Predictable lead flow every single morning.</span></li>
+                        <li><i class="fa-solid fa-check text-gold"></i> <span>AI filters leads *before* they book a call.</span></li>
+                        <li><i class="fa-solid fa-check text-gold"></i> <span>Prospects show up pre-sold and ready to buy.</span></li>
+                        <li><i class="fa-solid fa-check text-gold"></i> <span>Data-driven decisions, not "gut feelings."</span></li>
+                        <li><i class="fa-solid fa-check text-gold"></i> <span>You focus on Coaching, not prospecting.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-center" style="background: rgba(255,255,255,0.02);">
+        <div class="container">
+            <div data-aos="zoom-in">
+                <h4 class="uppercase">The Solution</h4>
+                <h1 class="text-gold">SYSTEM THAT SELLS™</h1>
+                <h3>Your Complete AI-Powered Client-Acquisition System</h3>
+                <p style="max-width: 700px; margin: 1rem auto 3rem;">We don't just "teach" you how to do it. We build the assets, write the copy, and install the automation for you.</p>
+            </div>
+            
+            <div class="mech-grid">
+                <div class="mech-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="mech-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+                    <h4>Assessment Funnel</h4>
+                    <p>Prospects answer structured questions revealing readiness. No guessing. Positions you as a Doctor, not a salesperson.</p>
+                </div>
+                <div class="mech-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mech-icon"><i class="fa-solid fa-route"></i></div>
+                    <h4>Score-Based Routing</h4>
+                    <p>High-intent leads go to your calendar. Low-intent leads go to email nurture. Protects your time aggressively.</p>
+                </div>
+                <div class="mech-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mech-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                    <h4>Automated Nurture</h4>
+                    <p>Our 3-step email sequence warms up leads while you sleep. They show up to calls knowing your methodology.</p>
+                </div>
+                 <div class="mech-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mech-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h4>KPI Dashboard</h4>
+                    <p>One screen showing Leads, Show rate, Close rate. You act like a CEO looking at a dashboard, not a hustler.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div style="margin-bottom: 3rem;">
+                <h4 class="uppercase">The Build Manifest</h4>
+                <h2>We Build The Assets. You Own The System.</h2>
+                <p>Most programs give you a course and a "Good Luck." We are different. We act as your fractional Chief Technology Officer.</p>
+            </div>
+
+            <div class="manifest-container" data-aos="fade-up">
+                <ul class="check-list">
+                    <li><strong>The Core Funnel Architecture:</strong> Landing pages, VSL pages, and Booking logic fully built.</li>
+                    <li><strong>The "Mechanism" Script:</strong> A proprietary sales script tailored to your specific offer.</li>
+                    <li><strong>3-Step Email Nurture Sequence:</strong> Professionally copywritten to convert skeptics into believers.</li>
+                    <li><strong>The AI Scoring Logic:</strong> Advanced tech that separates "Browsers" from "Buyers."</li>
+                    <li><strong>Custom CRM Snapshot:</strong> Your pipeline, tags, and automations pre-loaded into your account.</li>
+                    <li><strong>The "God Mode" Dashboard:</strong> Track Ad Spend vs. Cash Collected in real-time.</li>
+                    <li><strong>30 Days of Content Scripts:</strong> Psychology-backed hooks to drive traffic to your new system.</li>
+                    <li><strong>Ads Launch Strategy:</strong> We help you launch your first ad campaign to feed the machine.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--bg-panel);">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 4rem;">Who Is This For?</h2>
+            
+            <div class="velvet-rope-grid">
+                <div class="rope-column no" data-aos="fade-right">
+                    <h3>DO NOT APPLY IF...</h3>
+                    <ul class="rope-list">
+                        <li>You are a complete beginner with no offer.</li>
+                        <li>You are looking for a "Get Rich Quick" scheme.</li>
+                        <li>You are not willing to spend money on ads/tools.</li>
+                        <li>You want to stay "small" and do everything yourself.</li>
+                        <li>You don't have any client results or testimonials.</li>
+                    </ul>
+                </div>
+                <div class="rope-column yes" data-aos="fade-left">
+                    <h3>THIS IS PERFECT FOR...</h3>
+                    <ul class="rope-list">
+                        <li><strong>Established Coaches/Experts</strong> doing ₹1L-₹5L/mo stuck at a revenue ceiling.</li>
+                        <li><strong>B2B Consultants</strong> who want to stop chasing clients and start attracting them.</li>
+                        <li><strong>Service Providers</strong> tired of manual outreach and relying on referrals.</li>
+                        <li>Leaders who are ready to trust a system and remove themselves from the daily grind.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+                <h4 class="uppercase">The Architects</h4>
+                <h2>Why This System Works When Others Fail</h2>
+                <p>Most agencies are either "Creative" (good ads, broken tech) or "Technical" (good automation, bad sales). You need both to scale.</p>
+            </div>
+
+            <div class="founder-grid">
+                <div class="founder-card" data-aos="fade-up">
+                    <span class="founder-role">Strategy & Sales</span>
+                    <h3 class="text-white">Rohit</h3>
+                    <p>The "Systems Thinker." Rohit designs the psychological architecture of your funnel. He ensures your offer is irresistible and your sales script actually converts.</p>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">Superpower: Turning complex offers into simple, scalable systems.</p>
+                </div>
+                <div class="founder-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="founder-role">Tech & Automation</span>
+                    <h3 class="text-white">Ankush</h3>
+                    <p>The "AI Engineer." Ankush builds the engine under the hood. He ensures your automations fire, your AI qualifies leads correctly, and your tech stack never breaks.</p>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">Superpower: Automating manual tasks so you never have to do them again.</p>
+                </div>
+                
+                <div class="synergy-box" data-aos="zoom-in">
+                    <h3 class="text-gold">Strategy + Tech = Scale</h3>
+                    <p style="margin-bottom: 0;">We combine High-Level Sales Psychology with Cutting-Edge AI Automation. That is the System That Sells™ difference.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: rgba(255,255,255,0.02);">
+        <div class="container">
+            <div class="text-center">
+                <h2>The Logic Behind The Investment</h2>
+                <p>Let's do the boring math. Emotional decisions feel good, but logical decisions make money.</p>
+            </div>
+
+            <div class="roi-grid">
+                <div class="roi-card" data-aos="fade-up">
+                    <div class="roi-num">₹2L+</div>
+                    <h4>Your Avg. Client Value</h4>
+                    <p style="font-size: 0.9rem;">If you sell a high-ticket program, one client is worth at least this much.</p>
+                </div>
+                <div class="roi-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="roi-num text-gold">2</div>
+                    <h4>Clients To Break Even</h4>
+                    <p style="font-size: 0.9rem;">You only need two sales to cover the entire cost of this infrastructure.</p>
+                </div>
+                <div class="roi-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="roi-num">12x</div>
+                    <h4>Potential Annual ROI</h4>
+                    <p style="font-size: 0.9rem;">If this system brings you just 2 clients a month, that’s ₹48L/year.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 4rem;">The 90-Day Protocol</h2>
+            
+            <div class="roadmap-container">
+                <div class="roadmap-item" data-aos="fade-left">
+                    <h3 class="text-gold">DAY 1 — FOUNDATIONS</h3>
+                    <p>Offer architecture, Success plan, Guarantee alignment, Funnel blueprint.</p>
+                </div>
+                <div class="roadmap-item" data-aos="fade-left" data-aos-delay="100">
+                    <h3 class="text-gold">DAYS 2–14 — THE BUILD (WE DO THIS)</h3>
+                    <p>We take over. Full funnel setup, Assessment + scoring, Automations, Email sequences. <strong>Your system goes live on Day 14.</strong></p>
+                </div>
+                <div class="roadmap-item" data-aos="fade-left" data-aos-delay="200">
+                    <h3 class="text-gold">DAYS 15–45 — OPTIMIZATION</h3>
+                    <p>Funnel monitoring, Hook testing, Sales refinements, Show-up rate optimization.</p>
+                </div>
+                <div class="roadmap-item" style="margin-bottom: 0;" data-aos="fade-left" data-aos-delay="300">
+                    <h3 class="text-gold">DAYS 46–90 — SCALE</h3>
+                    <p>Conversion lifts, Content upgrades, Weekly KPI strategy, Handoff playbook.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container" style="max-width: 900px;">
+            <div class="guarantee-box" data-aos="zoom-in">
+                <div class="guarantee-badge">Official ROI Promise</div>
+                <i class="fa-solid fa-shield-halved guarantee-icon"></i>
+                
+                <h3 class="text-white" style="font-size: 2rem; margin-bottom: 1.5rem;">
+                    If you don’t collect <span class="text-gold">₹8L in revenue</span> within 90 days...
+                </h3>
+                
+                <p style="font-size: 1.25rem; line-height: 1.6; max-width: 700px; margin: 0 auto 2rem;">
+                    We continue supporting you for up to 12 months at no extra cost — until you hit the target. We take the risk, so you don't have to.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container" style="max-width: 800px;">
+            <h2 class="text-center" style="margin-bottom: 3rem;">Frequently Asked Questions</h2>
+            
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">Do I need to be tech-savvy?</button>
+                <div class="faq-answer">
+                    Not at all. That is Ankush's job. We build the architecture for you. We hand you the keys to a finished car; you just need to drive it.
+                </div>
+            </div>
+            
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">Does this work for B2B consultants?</button>
+                <div class="faq-answer">
+                    Yes. The "Assessment Funnel" model is actually more effective in B2B because it positions you as a diagnostician rather than a "salesperson." It builds high trust before the call.
+                </div>
+            </div>
+            
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">What is the time commitment?</button>
+                <div class="faq-answer">
+                    During the 14-day build, we need about 2-3 hours of your time for content approval. After launch, the system runs on autopilot, requiring only weekly review calls with us.
+                </div>
+            </div>
+            
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">What software do I need?</button>
+                <div class="faq-answer">
+                    We typically build on GoHighLevel because it replaces 10 other tools. If you don't have it, we will set it up for you. You don't need expensive tools like ClickFunnels or ActiveCampaign anymore.
+                </div>
+            </div>
+
+             <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">Is the guarantee real?</button>
+                <div class="faq-answer">
+                    100%. We put it in the contract. If you execute the steps we provide and don't hit the revenue target, we work for free until you do. We are incentivized to make you win.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-top: 0; border-bottom: none;">
+        <div class="container text-center" data-aos="fade-up">
+            <p class="uppercase">Your Investment</p>
+            <h1 class="text-gold" style="font-size: 4rem; line-height: 1;">₹4,00,000</h1>
+            <p class="text-muted" style="margin-bottom: 3rem;">(One-time investment • ROI Guarantee Included)</p>
+            
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 3rem;">
+                This price is less than the value of 2 high-ticket clients. One funnel will bring you clients for years.
+            </p>
+
+            <a href="#apply" class="btn-gold" style="font-size: 1.2rem; padding: 25px 60px;">Apply For Accelerator Access</a>
+            
+            <p style="margin-top: 2rem; font-size: 0.9rem; color: #555;">
+                By Application Only. We do not accept everyone.
+            </p>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init Animations
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
+        });
+
+        // FAQ Toggle Logic
+        const questions = document.querySelectorAll('.faq-question');
+        questions.forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

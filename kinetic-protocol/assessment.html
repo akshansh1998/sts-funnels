@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Access | The Kinetic Protocol™</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        carbon: '#0B0C10',
+                        titanium: '#1C2541',
+                        signal: '#FF4500', 
+                        signalHover: '#CC3700',
+                        techGray: '#C5C6C7',
+                        success: '#00F0FF'
+                    },
+                    fontFamily: {
+                        display: ['"Barlow Condensed"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #1C2541 1px, transparent 1px), linear-gradient(to bottom, #1C2541 1px, transparent 1px)",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0B0C10; color: #C5C6C7; font-family: 'JetBrains Mono', monospace; overflow-x: hidden; }
+        .bg-tech-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(28, 37, 65, 0.3) 1px, transparent 1px), linear-gradient(to bottom, rgba(28, 37, 65, 0.3) 1px, transparent 1px); }
+        
+        /* VIDEO PLAYER GLOW */
+        .video-wrapper {
+            box-shadow: 0 0 50px rgba(28, 37, 65, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+        .video-wrapper:hover {
+            border-color: #FF4500;
+            box-shadow: 0 0 80px rgba(255, 69, 0, 0.2);
+        }
+
+        /* PROGRESS BAR STRIPES */
+        .progress-stripes {
+            background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+            background-size: 1rem 1rem;
+        }
+
+        .btn-kinetic { clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.15em; }
+        .btn-kinetic:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(255, 69, 0, 0.4); background-color: #CC3700; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+    <div class="w-full bg-[#050608] border-b border-white/5 py-2 px-6 flex justify-between items-center text-[10px] font-mono tracking-widest text-gray-500">
+        <div class="flex items-center gap-2">
+            <div class="w-2 h-2 rounded-full bg-success animate-pulse"></div>
+            SECURE CONNECTION ESTABLISHED
+        </div>
+        <div>ID: USER-8829-X</div>
+    </div>
+
+    <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center bg-carbon border-b border-white/5 relative z-50">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-signal rounded-sm"></div>
+            <span class="font-display font-bold text-xl tracking-widest text-white">KINETIC<span class="text-signal">PROTOCOL</span></span>
+        </div>
+        <div class="hidden md:flex items-center gap-4">
+            <div class="text-xs font-mono text-signal">PHASE 1: BRIEFING</div>
+            <div class="w-32 h-1 bg-white/10 rounded-full overflow-hidden">
+                <div class="h-full w-1/2 bg-signal progress-stripes"></div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex flex-col md:flex-row h-full">
+        
+        <aside class="hidden md:block w-72 bg-[#08090b] border-r border-white/5 p-8 flex-shrink-0 min-h-screen">
+            <div class="mb-10">
+                <h4 class="text-xs font-mono text-gray-500 uppercase tracking-widest mb-4">Briefing Materials</h4>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-white text-sm font-bold bg-white/5 p-3 rounded-sm border-l-2 border-signal">
+                        <i class="fa-solid fa-play text-signal text-xs"></i> 01. Protocol Video
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-500 text-sm p-3 hover:text-white transition-colors cursor-not-allowed opacity-50">
+                        <i class="fa-solid fa-lock text-xs"></i> 02. Biometric Audit
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-500 text-sm p-3 hover:text-white transition-colors cursor-not-allowed opacity-50">
+                        <i class="fa-solid fa-lock text-xs"></i> 03. Engineering Call
+                    </li>
+                </ul>
+            </div>
+
+            <div class="p-6 border border-white/10 bg-white/[0.02] text-center">
+                <i class="fa-solid fa-user-doctor text-3xl text-gray-600 mb-4"></i>
+                <h5 class="text-white font-display uppercase tracking-wide mb-2">Need Help?</h5>
+                <p class="text-[10px] text-gray-500 leading-relaxed mb-4">If you have specific medical restrictions, email our intake team.</p>
+                <a href="#" class="text-signal text-xs font-mono hover:underline">support@kinetic.com</a>
+            </div>
+        </aside>
+
+        <section class="flex-grow bg-tech-grid relative p-6 md:p-16">
+            
+            <div class="max-w-4xl mx-auto">
+                
+                <div class="mb-10" data-aos="fade-down">
+                    <span class="text-signal font-mono text-xs tracking-widest mb-2 block">// AUTHORIZED PERSONNEL ONLY</span>
+                    <h1 class="font-display text-4xl md:text-5xl text-white font-bold">THE BIOLOGICAL INFRASTRUCTURE BRIEFING</h1>
+                    <p class="text-techGray font-mono mt-2">Watch this 14-minute breakdown before proceeding to your audit.</p>
+                </div>
+
+                <div class="relative w-full aspect-video bg-black rounded-sm video-wrapper overflow-hidden mb-12 group cursor-pointer" data-aos="zoom-in">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop" alt="Video Thumbnail" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+                    
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-20 h-20 bg-signal/90 rounded-full flex items-center justify-center pl-1 shadow-[0_0_40px_rgba(255,69,0,0.6)] group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-play text-white text-3xl"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent flex justify-between items-end">
+                        <div>
+                            <div class="text-[10px] font-bold text-signal bg-black/50 px-2 py-1 inline-block mb-2">PREVIEW MODE</div>
+                            <h3 class="text-white font-display text-xl tracking-wide">MODULE 1: THE METABOLIC RESET</h3>
+                        </div>
+                        <div class="text-white font-mono text-xs">14:02</div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 items-start" data-aos="fade-up" data-aos-delay="200">
+                    
+                    <div class="border border-white/10 p-8 bg-carbon">
+                        <div class="flex items-start gap-4 mb-6">
+                            <i class="fa-solid fa-file-pdf text-4xl text-gray-600"></i>
+                            <div>
+                                <h4 class="text-white font-display text-xl">THE SITTER'S SYNDROME PDF</h4>
+                                <p class="text-xs text-gray-500 font-mono mt-1">Diagnostic checklist & self-assessment tool.</p>
+                            </div>
+                        </div>
+                        <button class="w-full border border-white/20 text-gray-300 hover:text-white hover:border-white py-3 text-xs font-mono uppercase tracking-widest transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-download"></i> Download Asset
+                        </button>
+                    </div>
+
+                    <div class="border border-signal/50 p-8 bg-gradient-to-br from-signal/10 to-transparent relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-signal blur-[60px] opacity-20"></div>
+
+                        <h4 class="text-signal font-mono text-xs tracking-widest mb-2">STEP 2: CUSTOMIZATION</h4>
+                        <h3 class="text-white font-display text-2xl font-bold mb-4">START YOUR AUDIT</h3>
+                        <p class="text-sm text-gray-400 font-mono mb-6 leading-relaxed">
+                            Information is not implementation. To build your custom protocol, we need to analyze your current load, injuries, and metabolic rate.
+                        </p>
+                        
+                        <a href="sales.html" class="w-full btn-kinetic bg-signal text-white py-4 flex items-center justify-center gap-3 font-bold text-lg">
+                            BEGIN DIAGNOSIS <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-carbon border-t border-white/5 py-8 text-center">
+        <div class="text-gray-600 text-[10px] font-mono">
+            &copy; 2026 THE KINETIC PROTOCOL™. SECURE AREA.
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+    
+    <script src="../funnel-nav.js"></script>
+</body>
+</html>

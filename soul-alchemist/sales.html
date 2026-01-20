@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Quantum Alignment Shift | The Soul Alchemist</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* --- BRAND DNA --- */
+        :root {
+            --bg-body: #F9F7F2;
+            --bg-panel: #F2EFE9;
+            --bg-card: #FFFFFF;
+            --text-primary: #4A4A4A;
+            --text-muted: #7A7A7A;
+            --text-gold: #C5A059;
+            --brand-primary: #8DA399;
+            --brand-dark: #6F827A;
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+            --soft-shadow: 0 20px 60px -10px rgba(141, 163, 153, 0.15);
+        }
+
+        /* --- BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--bg-body); 
+            color: var(--text-primary); 
+            font-family: var(--font-body); 
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 2; }
+        section { padding: 5rem 0; position: relative; }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3 { font-family: var(--font-head); color: var(--text-primary); margin-bottom: 1.5rem; line-height: 1.2; }
+        h1 { font-size: clamp(3rem, 5vw, 4.5rem); text-align: center; }
+        h2 { font-size: 2.5rem; text-align: center; }
+        p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+        
+        .accent-text { color: var(--text-gold); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 1rem; }
+        .text-center { text-align: center; }
+
+        /* --- COMPONENTS --- */
+        .btn-brand {
+            padding: 22px 50px; border-radius: 50px;
+            background: var(--brand-primary); color: white;
+            font-family: var(--font-body); font-weight: 700; 
+            border: none; cursor: pointer;
+            letter-spacing: 2px; text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(141, 163, 153, 0.3); 
+            text-decoration: none; display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .btn-brand:hover { transform: translateY(-3px); background: var(--brand-dark); }
+
+        /* --- HERO --- */
+        .hero { min-height: 80vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, #FFF 0%, var(--bg-body) 70%); }
+
+        /* --- CARDS --- */
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .feature-card {
+            background: var(--bg-card); padding: 3rem; border-radius: 20px;
+            box-shadow: var(--soft-shadow); border: 1px solid rgba(255,255,255,0.8);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover { transform: translateY(-5px); }
+        .icon-circle {
+            width: 60px; height: 60px; background: var(--bg-panel); color: var(--brand-primary);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: 1.5rem;
+        }
+
+        /* --- MODULE STACK --- */
+        .module-row {
+            display: flex; gap: 2rem; align-items: flex-start; margin-bottom: 3rem;
+            padding: 2rem; border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .module-num {
+            font-family: var(--font-head); font-size: 4rem; color: rgba(141, 163, 153, 0.2); font-weight: 700; line-height: 0.8;
+        }
+
+        /* --- GUARANTEE --- */
+        .guarantee-box {
+            border: 1px solid var(--text-gold); padding: 3rem; text-align: center;
+            background: #FFF; max-width: 800px; margin: 0 auto;
+            position: relative;
+        }
+        .guarantee-seal {
+            position: absolute; top: -30px; left: 50%; transform: translateX(-50%);
+            background: var(--bg-body); padding: 0 1rem; color: var(--text-gold); font-size: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .module-row { flex-direction: column; gap: 1rem; padding: 1rem; text-align: center; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav style="position: fixed; top: 0; width: 100%; background: rgba(249, 247, 242, 0.95); backdrop-filter: blur(10px); padding: 1.5rem 0; z-index: 100; border-bottom: 1px solid rgba(0,0,0,0.05);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-family: var(--font-head); font-weight: 700; font-size: 1.2rem;">THE SOUL ALCHEMIST</span>
+            <a href="booking.html" style="font-size: 0.8rem; font-weight: 700; color: var(--brand-primary); text-decoration: none; letter-spacing: 1px;">APPLY NOW</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container text-center" data-aos="fade-up">
+            <span class="accent-text">For the High-Achieving Woman</span>
+            <h1>Success Should Not <br> Feel Like Suffocation.</h1>
+            <p style="max-width: 600px; margin: 2rem auto;">
+                You have the title, the money, and the accolades. But inside, you are running on adrenaline and coffee. It is time to replace "Force" with "Flow."
+            </p>
+            <a href="#offer" class="btn-brand">DISCOVER THE SHIFT</a>
+        </div>
+    </section>
+
+    <section style="background: var(--bg-card);">
+        <div class="container">
+            <div class="text-center" style="max-width: 700px; margin: 0 auto 4rem;" data-aos="fade-up">
+                <h2>The Golden Cage</h2>
+                <p>
+                    You built this life to feel free, but now you feel trapped by the very business that was supposed to liberate you. You are operating in <strong>Masculine Shielding</strong>—always protecting, always fighting, always driving.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="icon-circle"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Mental Fog</h3>
+                    <p>You can't turn it off. Even at dinner with family, you are mentally resolving Slack messages.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-circle"><i class="fa-solid fa-heart-crack"></i></div>
+                    <h3>Emotional Numbness</h3>
+                    <p>Success doesn't feel like joy anymore. It just feels like "relief" that nothing broke.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-circle"><i class="fa-solid fa-battery-empty"></i></div>
+                    <h3>Adrenal Fatigue</h3>
+                    <p>You need 3 coffees to start and wine to stop. Your biology is screaming for a reset.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="offer" style="background: var(--bg-panel);">
+        <div class="container">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="accent-text">The Solution</span>
+                <h2>The Quantum Alignment Shift™</h2>
+                <p>A 12-Week container to rewire your nervous system and reclaim your sovereignty.</p>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="module-row" data-aos="fade-right">
+                    <div class="module-num">01</div>
+                    <div>
+                        <h3>The Biological Reset</h3>
+                        <p>We start by detoxing your nervous system from "Urgency Addiction." We use somatic practices to clear the cortisol loop so you can actually think clearly again.</p>
+                    </div>
+                </div>
+
+                <div class="module-row" data-aos="fade-right">
+                    <div class="module-num">02</div>
+                    <div>
+                        <h3>The Intuition Link</h3>
+                        <p>We reconnect you to your inner compass. You stop making decisions based on "Strategy" and start making them based on "Knowing." This is where the magic happens.</p>
+                    </div>
+                </div>
+
+                <div class="module-row" data-aos="fade-right" style="border-bottom: none;">
+                    <div class="module-num">03</div>
+                    <div>
+                        <h3>The Flow State Architecture</h3>
+                        <p>We rebuild your calendar and business model. We remove the friction. We automate the drudgery. You work less, but your impact deepens.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2>Stories of Aligned Success</h2>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card" style="text-align: center;">
+                    <p class="italic" style="font-size: 1.2rem; color: var(--text-primary);">"I doubled my revenue in 3 months, but the crazy part is I'm working 4 days a week now. I didn't know this was possible."</p>
+                    <div style="margin-top: 1rem; color: var(--text-gold); font-weight: 700;">SARAH J. — CEO, Tech</div>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <p class="italic" style="font-size: 1.2rem; color: var(--text-primary);">"I was ready to sell my business and quit. This program saved my life's work. I fell in love with my mission again."</p>
+                    <div style="margin-top: 1rem; color: var(--text-gold); font-weight: 700;">MICHELLE R. — Founder, Agency</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-bottom: 8rem;">
+        <div class="container text-center">
+            
+            <div class="guarantee-box" data-aos="zoom-in">
+                <div class="guarantee-seal"><i class="fa-solid fa-star"></i></div>
+                <h3>The "Deep Peace" Promise</h3>
+                <p>
+                    If you commit to the practices and do not feel a profound shift in your peace and clarity within 30 days, I will refund your investment in full. No questions asked.
+                </p>
+            </div>
+
+            <div style="margin-top: 4rem;">
+                <h2>Are You Ready To Come Home?</h2>
+                <p>The application process ensures we are an energetic match.</p>
+                
+                <a href="booking.html" class="btn-brand" style="font-size: 1.2rem; padding: 25px 60px;">
+                    BEGIN YOUR APPLICATION
+                </a>
+                
+                <p style="font-size: 0.9rem; margin-top: 2rem; opacity: 0.7;">
+                    Limited to 10 women per cohort.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+    
+    <script src="../funnel-nav.js"></script>
+</body>
+</html>

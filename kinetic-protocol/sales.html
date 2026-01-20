@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Protocol | Kinetic Engineering</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        carbon: '#0B0C10',
+                        titanium: '#1C2541',
+                        signal: '#FF4500', 
+                        signalHover: '#CC3700',
+                        techGray: '#C5C6C7',
+                        success: '#00F0FF'
+                    },
+                    fontFamily: {
+                        display: ['"Barlow Condensed"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #1C2541 1px, transparent 1px), linear-gradient(to bottom, #1C2541 1px, transparent 1px)",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0B0C10; color: #C5C6C7; font-family: 'JetBrains Mono', monospace; overflow-x: hidden; }
+        .bg-tech-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(28, 37, 65, 0.3) 1px, transparent 1px), linear-gradient(to bottom, rgba(28, 37, 65, 0.3) 1px, transparent 1px); }
+        
+        .btn-kinetic { clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.15em; }
+        .btn-kinetic:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(255, 69, 0, 0.4); background-color: #CC3700; }
+
+        /* ENGINEERING CARD HOVER */
+        .eng-card { transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.05); }
+        .eng-card:hover { border-color: #FF4500; background: rgba(255, 69, 0, 0.05); transform: translateY(-5px); }
+
+        /* HIGHLIGHTER */
+        .highlight { background: rgba(255, 69, 0, 0.2); color: white; padding: 0 4px; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 bg-[#0B0C10]/90 backdrop-blur-md border-b border-white/10 py-4 px-6 md:px-12 flex justify-between items-center transition-all">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-signal rounded-sm flex items-center justify-center font-bold text-carbon">K</div>
+            <span class="font-display font-bold text-xl tracking-widest text-white hidden md:block">KINETIC<span class="text-signal">PROTOCOL</span></span>
+        </div>
+        <a href="#booking" class="btn-kinetic bg-signal text-white px-6 py-3 font-bold text-sm">
+            APPLY FOR AUDIT
+        </a>
+    </nav>
+
+    <section class="pt-32 pb-20 bg-tech-grid relative">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            
+            <div class="inline-block border border-signal text-signal px-3 py-1 font-mono text-xs tracking-[0.2em] mb-8 bg-signal/10 rounded-sm">
+                CONFIDENTIAL: BIOLOGICAL ENGINEERING REPORT
+            </div>
+
+            <h1 class="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-8" data-aos="fade-up">
+                YOU ARE RUNNING A $10M BUSINESS ON A <span class="text-signal">$10 BIOLOGICAL ENGINE.</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-techGray font-mono leading-relaxed mb-12" data-aos="fade-up" data-aos-delay="100">
+                Most executives treat their body like a rental car. They drive it hard, ignore the warning lights, and act surprised when the engine seizes at age 45. <br><br>
+                It is time to fix the machine.
+            </p>
+
+            <div class="relative w-full aspect-video bg-black border border-white/20 shadow-2xl mb-12 group overflow-hidden rounded-sm" data-aos="zoom-in">
+                <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?q=80&w=1887&auto=format&fit=crop" class="w-full h-full object-cover opacity-50">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-20 h-20 bg-signal rounded-full flex items-center justify-center pl-1 shadow-[0_0_50px_rgba(255,69,0,0.5)] group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-play text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="absolute bottom-6 left-6 text-left">
+                    <div class="bg-black/80 px-4 py-2 text-white font-display text-xl uppercase tracking-widest">
+                        The 90-Day Reconstruction Plan
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-carbon border-t border-white/5">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h3 class="text-signal font-mono text-xs tracking-widest mb-4">// THE DIAGNOSIS</h3>
+                    <h2 class="font-display text-4xl md:text-5xl text-white font-bold mb-6">EXECUTIVE SITTER'S SYNDROME</h2>
+                    <p class="text-gray-400 font-mono mb-6 leading-relaxed">
+                        You sit for 10-14 hours a day. Your hip flexors are locked. Your glutes are dormant. Your cortisol is spiking because of high-stakes decisions, but you never burn it off physically.
+                    </p>
+                    <p class="text-white font-bold font-mono border-l-2 border-signal pl-4 mb-6">
+                        This is why "Cardio" fails you.
+                    </p>
+                    <p class="text-gray-400 font-mono leading-relaxed">
+                        Running on a treadmill adds *more* stress to a body that is already inflamed. You don't need to sweat more. You need to structurally realign your chassis.
+                    </p>
+                </div>
+                <div class="relative bg-white/5 p-2 border border-white/10" data-aos="fade-left">
+                    <div class="absolute top-4 right-4 text-signal font-mono text-xs animate-pulse">● LIVE DATA</div>
+                    <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop" class="w-full grayscale contrast-125 opacity-80 mix-blend-luminosity">
+                    <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-tech-grid border-y border-white/5">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-display text-5xl text-white font-bold mb-4">WE DO NOT "WORK OUT." <br> WE ENGINEER.</h2>
+                <p class="text-techGray font-mono">The 3-Phase Metabolic Reconstruction Protocol.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="eng-card bg-[#0F1014] p-8" data-aos="fade-up" data-aos-delay="0">
+                    <div class="h-12 w-12 bg-white/5 border border-white/10 flex items-center justify-center text-signal text-xl mb-6">
+                        <i class="fa-solid fa-vial"></i>
+                    </div>
+                    <h3 class="text-white font-display text-2xl mb-4">PHASE 1: THE AUDIT</h3>
+                    <p class="text-sm text-gray-500 font-mono mb-4">We start with bloodwork. We look at Testosterone, Cortisol, and Insulin Sensitivity. We don't guess.</p>
+                    <ul class="space-y-2 text-xs text-gray-400 font-mono">
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-signal"></i> Full Panel Analysis</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-signal"></i> Mobility Screening</li>
+                    </ul>
+                </div>
+
+                <div class="eng-card bg-[#0F1014] p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-12 w-12 bg-white/5 border border-white/10 flex items-center justify-center text-signal text-xl mb-6">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-white font-display text-2xl mb-4">PHASE 2: THE IGNITION</h3>
+                    <p class="text-sm text-gray-500 font-mono mb-4">The "20-Minute Protocol." High-density resistance training designed to trigger an anabolic response without joint stress.</p>
+                    <ul class="space-y-2 text-xs text-gray-400 font-mono">
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-signal"></i> 4x Per Week</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-signal"></i> Hotel-Room Compatible</li>
+                    </ul>
+                </div>
+
+                <div class="eng-card bg-[#0F1014] p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-12 w-12 bg-white/5 border border-white/10 flex items-center justify-center text-signal text-xl mb-6">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="text-white font-display text-2xl mb-4">PHASE 3: FUEL LOGISTICS</h3>
+                    <p class="text-sm text-gray-500 font-mono mb-4">We automate your nutrition. We give you the "Executive Menu" for client dinners so you stay lean while closing deals.</p>
+                    <ul class="space-y-2 text-xs text-gray-400 font-mono">
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-signal"></i> No Tupperware</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-signal"></i> Alcohol Protocol Included</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-carbon">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="font-display text-4xl text-white text-center mb-16 font-bold">RESULTS ARE BINARY. <br> <span class="text-gray-600">IT EITHER WORKS OR IT DOESN'T.</span></h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white/[0.02] border border-white/5 p-6 flex items-start gap-4">
+                    <div class="w-16 h-16 bg-gray-700 rounded-sm overflow-hidden flex-shrink-0">
+                         <img src="https://placehold.co/100x100/333/999?text=J" class="w-full h-full object-cover grayscale">
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold font-display text-lg">JAMES R. (CEO, Tech)</h4>
+                        <div class="flex gap-1 text-signal text-xs mb-2">★★★★★</div>
+                        <p class="text-sm text-gray-400 font-mono">"I didn't have time for a trainer. Alex built a system that fit my travel schedule. Dropped 18lbs in 8 weeks while closing our Series B."</p>
+                    </div>
+                </div>
+
+                <div class="bg-white/[0.02] border border-white/5 p-6 flex items-start gap-4">
+                    <div class="w-16 h-16 bg-gray-700 rounded-sm overflow-hidden flex-shrink-0">
+                         <img src="https://placehold.co/100x100/333/999?text=M" class="w-full h-full object-cover grayscale">
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold font-display text-lg">MICHAEL T. (Founder, Agency)</h4>
+                        <div class="flex gap-1 text-signal text-xs mb-2">★★★★★</div>
+                        <p class="text-sm text-gray-400 font-mono">"The back pain was killing my focus. The mobility protocols fixed it in 10 days. I have more energy at 45 than I did at 30."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-tech-grid relative overflow-hidden" id="booking">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-signal rounded-full blur-[200px] opacity-5 pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 max-w-4xl relative z-10">
+            <div class="bg-[#08090b] border border-white/10 p-8 md:p-12 shadow-2xl text-center">
+                
+                <h3 class="text-signal font-mono text-xs tracking-widest mb-4">THE PROPOSAL</h3>
+                <h2 class="font-display text-5xl text-white font-bold mb-6">THE 90-DAY RECONSTRUCTION</h2>
+                <p class="text-techGray font-mono mb-10 max-w-lg mx-auto">
+                    We install the full operating system in your life. You execute. We optimize.
+                </p>
+
+                <div class="text-left bg-white/5 p-6 border border-white/5 mb-10 max-w-lg mx-auto">
+                    <ul class="space-y-4 font-mono text-sm text-gray-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-signal"></i> <strong>The Custom Metabolic Blueprint</strong></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-signal"></i> <strong>The "20-Minute Signal" Mobile App</strong></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-signal"></i> <strong>Travel & Restaurant Protocols</strong></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-signal"></i> <strong>1:1 Engineering Strategy Calls</strong></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-signal"></i> <strong>Daily Accountability Check-ins</strong></li>
+                    </ul>
+                </div>
+
+                <div class="mb-10 p-4 border border-signal/30 bg-signal/5 inline-block">
+                    <h4 class="text-white font-bold font-display uppercase tracking-wider text-lg mb-2"><i class="fa-solid fa-shield-halved text-signal mr-2"></i> The "Results" Guarantee</h4>
+                    <p class="text-xs text-gray-400 font-mono">
+                        Add 20% to your energy baseline and drop 15lbs of pure fat in 90 days, or we coach you for free until you do.
+                    </p>
+                </div>
+
+                <a href="booking.html" class="w-full md:w-auto inline-block btn-kinetic bg-signal text-white px-12 py-6 font-bold text-2xl shadow-[0_0_30px_rgba(255,69,0,0.4)]">
+                    APPLY FOR AUDIT
+                </a>
+                <p class="mt-6 text-xs text-gray-600 font-mono">Serious inquiries only. If you are looking for a $50/mo program, this is not it.</p>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-carbon border-t border-white/5">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-3xl text-white font-display font-bold mb-12 text-center">LOGISTICAL QUESTIONS</h2>
+            
+            <div class="space-y-4">
+                <details class="bg-white/[0.02] border border-white/5 p-6 cursor-pointer group">
+                    <summary class="text-white font-bold font-display text-lg list-none flex justify-between items-center">
+                        I travel 50% of the time. Will this work?
+                        <i class="fa-solid fa-plus text-signal group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <p class="text-gray-400 font-mono text-sm mt-4 leading-relaxed">
+                        Yes. That is who this system is built for. We have specific "Hotel Room" workouts and "Airport Lounge" nutrition guides.
+                    </p>
+                </details>
+
+                <details class="bg-white/[0.02] border border-white/5 p-6 cursor-pointer group">
+                    <summary class="text-white font-bold font-display text-lg list-none flex justify-between items-center">
+                        I have old injuries (Back/Knees).
+                        <i class="fa-solid fa-plus text-signal group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <p class="text-gray-400 font-mono text-sm mt-4 leading-relaxed">
+                        We are not a CrossFit gym. We prioritize structural integrity. The first phase is correcting your imbalances so you can train pain-free.
+                    </p>
+                </details>
+
+                <details class="bg-white/[0.02] border border-white/5 p-6 cursor-pointer group">
+                    <summary class="text-white font-bold font-display text-lg list-none flex justify-between items-center">
+                        What is the investment?
+                        <i class="fa-solid fa-plus text-signal group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <p class="text-gray-400 font-mono text-sm mt-4 leading-relaxed">
+                        This is a high-ticket medical-grade consulting program, not a gym membership. We discuss the investment only after we confirm we can actually help you on the Audit call.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#050608] border-t border-white/5 py-12 text-center">
+        <div class="text-gray-600 text-xs font-mono mb-4">
+            &copy; 2026 THE KINETIC PROTOCOL™.
+        </div>
+        <div class="flex justify-center gap-6 text-[10px] text-gray-700 font-mono uppercase tracking-widest">
+            <a href="#" class="hover:text-white transition-colors">Privacy</a>
+            <a href="#" class="hover:text-white transition-colors">Terms</a>
+            <a href="#" class="hover:text-white transition-colors">Medical Disclaimer</a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+    
+    <script src="../funnel-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Energy Blueprint | The Soul Alchemist</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* --- BRAND DNA --- */
+        :root {
+            --bg-body: #F9F7F2;
+            --bg-panel: #F2EFE9;
+            --bg-card: #FFFFFF;
+            --text-primary: #4A4A4A;
+            --text-muted: #7A7A7A;
+            --text-gold: #C5A059;
+            --brand-primary: #8DA399;
+            --brand-dark: #6F827A;
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+            --soft-shadow: 0 20px 60px -10px rgba(141, 163, 153, 0.2);
+        }
+
+        /* --- BASE --- */
+        body { 
+            background-color: var(--bg-body); 
+            color: var(--text-primary); 
+            font-family: var(--font-body); 
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+
+        /* --- SCORE CARD (THE DIAGNOSIS) --- */
+        .score-section {
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .diagnosis-card {
+            background: var(--bg-card);
+            padding: 3rem; border-radius: 20px;
+            box-shadow: var(--soft-shadow);
+            border: 1px solid rgba(255,255,255,0.8);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .diagnosis-label {
+            font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase;
+            color: var(--text-gold); font-weight: 700; display: block; margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-family: var(--font-head); font-size: 3rem; line-height: 1.1; margin-bottom: 1rem;
+        }
+        
+        .result-highlight { color: var(--brand-primary); font-style: italic; }
+
+        /* --- VSL WRAPPER --- */
+        .video-wrapper {
+            position: relative; width: 100%; padding-bottom: 56.25%; /* 16:9 */
+            background: #000; border-radius: 10px; overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            border: 1px solid rgba(197, 160, 89, 0.3); /* Gold Border */
+        }
+        
+        .play-overlay {
+            position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+            background: url('https://images.unsplash.com/photo-1600618528240-fb9fc964b853?q=80&w=2070&auto=format&fit=crop') center/cover;
+            cursor: pointer;
+        }
+        .play-btn {
+            width: 80px; height: 80px; background: rgba(255,255,255,0.9);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: var(--brand-primary); font-size: 2rem; padding-left: 5px;
+            box-shadow: 0 0 0 10px rgba(255,255,255,0.3);
+            transition: transform 0.3s;
+        }
+        .video-wrapper:hover .play-btn { transform: scale(1.1); }
+
+        /* --- CTA SECTION --- */
+        .next-step-panel {
+            background: var(--bg-panel); padding: 3rem; border-radius: 20px;
+            text-align: center; margin-top: 2rem;
+            border: 1px solid rgba(141, 163, 153, 0.2);
+        }
+
+        .btn-brand {
+            padding: 20px 50px; border-radius: 50px;
+            background: var(--brand-primary); color: white;
+            font-family: var(--font-body); font-weight: 700; 
+            border: none; cursor: pointer;
+            letter-spacing: 2px; text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(141, 163, 153, 0.3); 
+            text-decoration: none; display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .btn-brand:hover { transform: translateY(-3px); background: var(--brand-dark); }
+
+    </style>
+</head>
+<body>
+
+    <nav style="padding: 2rem; text-align: center;">
+        <span style="font-family: var(--font-head); font-weight: 700; letter-spacing: 1px; color: var(--text-primary);">
+            THE SOUL ALCHEMIST
+        </span>
+    </nav>
+
+    <div class="container">
+        
+        <section class="score-section">
+            
+            <div class="diagnosis-card" data-aos="fade-up">
+                <span class="diagnosis-label">Your Profile Analysis</span>
+                <h1>You are currently operating <br> in the <span class="result-highlight">"Force Zone."</span></h1>
+                
+                <p style="max-width: 600px; margin: 1.5rem auto; color: var(--text-muted); font-size: 1.1rem;">
+                    Your diagnostic indicates that you have high ambition but low energetic alignment. 
+                    You are achieving results through sheer will, which is why success feels like exhaustion.
+                </p>
+
+                <div class="video-wrapper">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                    </div>
+                </div>
+
+                <p style="font-size: 0.9rem; margin-top: 1rem; color: var(--text-gold); font-weight: 700;">
+                    <i class="fa-solid fa-headphones"></i> Please watch this 4-minute interpretation.
+                </p>
+            </div>
+
+            <div class="next-step-panel" data-aos="fade-up" data-aos-delay="200">
+                <h3 style="font-family: var(--font-head); font-size: 2rem; margin-bottom: 1rem;">The Prescription</h3>
+                <p style="margin-bottom: 2rem; color: var(--text-muted);">
+                    You do not need to "work harder." You need to shift your operating system from Force to Flow. 
+                    I have mapped out the exact 12-week protocol to make this shift.
+                </p>
+                
+                <a href="sales.html" class="btn-brand">
+                    VIEW THE PROTOCOL <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
+                </a>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+    <script src="../funnel-nav.js"></script>
+</body>
+</html>

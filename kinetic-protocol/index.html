@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Kinetic Protocol™ | Executive Briefing</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        carbon: '#0B0C10',
+                        titanium: '#1C2541',
+                        signal: '#FF4500', 
+                        signalHover: '#CC3700',
+                        techGray: '#C5C6C7',
+                        glass: 'rgba(28, 37, 65, 0.6)'
+                    },
+                    fontFamily: {
+                        display: ['"Barlow Condensed"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #1C2541 1px, transparent 1px), linear-gradient(to bottom, #1C2541 1px, transparent 1px)",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0B0C10; color: #C5C6C7; font-family: 'JetBrains Mono', monospace; overflow-x: hidden; }
+        .bg-tech-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(28, 37, 65, 0.3) 1px, transparent 1px), linear-gradient(to bottom, rgba(28, 37, 65, 0.3) 1px, transparent 1px); }
+        .btn-kinetic { clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.15em; }
+        .btn-kinetic:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(255, 69, 0, 0.4); background-color: #CC3700; }
+        .input-tech { background: rgba(11, 12, 16, 0.8); border: 1px solid #1C2541; font-family: 'JetBrains Mono', monospace; transition: all 0.3s; }
+        .input-tech:focus { border-color: #FF4500; outline: none; box-shadow: 0 0 15px rgba(255, 69, 0, 0.2); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center fixed top-0 z-50 bg-carbon/90 backdrop-blur-md border-b border-white/5">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-signal rounded-sm"></div>
+            <span class="font-display font-bold text-xl tracking-widest text-white">KINETIC<span class="text-signal">PROTOCOL</span></span>
+        </div>
+        <a href="#apply-now" class="hidden md:block text-xs font-bold text-carbon bg-white hover:bg-signal hover:text-white transition-colors px-6 py-3 uppercase tracking-widest clip-path-slant">
+            Unlock Briefing
+        </a>
+    </nav>
+
+    <section class="relative min-h-[90vh] flex items-center justify-center pt-24 pb-20 overflow-hidden bg-tech-grid">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-titanium rounded-full blur-[150px] opacity-20 pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center flex flex-col items-center">
+            
+            <div class="inline-flex items-center gap-2 text-signal text-xs font-bold tracking-[0.3em] mb-8 border border-signal/30 px-4 py-2 bg-carbon/50 backdrop-blur-sm" data-aos="fade-down">
+                RESTRICTED ACCESS: EXECUTIVE BRIEFING
+            </div>
+            
+            <h1 class="font-display text-6xl md:text-8xl lg:text-9xl font-bold text-white leading-[0.9] mb-8" data-aos="fade-up">
+                YOUR BUSINESS <br> IS SCALABLE. <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-600">YOUR BIOLOGY <br> IS FAILING.</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-techGray max-w-2xl leading-relaxed mb-12" data-aos="fade-up" data-aos-delay="100">
+                <span class="text-white font-bold">FREE 14-MINUTE VIDEO BRIEFING:</span><br>
+                See the exact engineering protocol we use to fix "Founder Fatigue" and rebuild energy baselines in 90 days. No pills. No cardio hours. Just biological leverage.
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-6 items-center" data-aos="fade-up" data-aos-delay="200">
+                <a href="#apply-now" class="btn-kinetic bg-signal text-white px-10 py-6 font-bold text-xl text-center min-w-[250px]">
+                    WATCH THE BREAKDOWN
+                </a>
+                
+                <div class="flex items-center gap-3 opacity-60">
+                    <i class="fa-solid fa-arrow-down animate-bounce text-signal"></i>
+                    <span class="text-xs tracking-widest font-mono">SCROLL TO UNLOCK</span>
+                </div>
+            </div>
+
+            <div class="mt-20 pt-8 border-t border-white/5 flex flex-wrap justify-center gap-8 md:gap-16 opacity-30 grayscale hover:grayscale-0 transition-all duration-500 w-full max-w-4xl">
+                <img src="https://placehold.co/120x40/1C2541/FFFFFF/png?text=FORBES" alt="Forbes" class="h-6 object-contain">
+                <img src="https://placehold.co/120x40/1C2541/FFFFFF/png?text=MEN'S+HEALTH" alt="Men's Health" class="h-6 object-contain">
+                <img src="https://placehold.co/120x40/1C2541/FFFFFF/png?text=BLOOMBERG" alt="Bloomberg" class="h-6 object-contain">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-carbon relative border-y border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="font-display text-5xl md:text-6xl text-white font-bold mb-4">THE "GYM RAT" MODEL <span class="text-signal">IS BROKEN.</span></h2>
+                <p class="text-techGray font-mono text-sm md:text-base">You are a CEO, not an influencer. Stop training like a teenager with infinite free time.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <div class="p-8 border border-white/5 bg-white/[0.02]" data-aos="fade-right">
+                    <h3 class="font-display text-2xl text-techGray mb-6 flex items-center gap-3"><i class="fa-solid fa-triangle-exclamation"></i> THE OLD WAY</h3>
+                    <ul class="space-y-4 font-mono text-sm text-gray-400">
+                        <li class="flex gap-4 items-start"><i class="fa-solid fa-xmark text-red-500 mt-1"></i> 60m daily cardio (wasted time).</li>
+                        <li class="flex gap-4 items-start"><i class="fa-solid fa-xmark text-red-500 mt-1"></i> Starvation diets & energy crashes.</li>
+                        <li class="flex gap-4 items-start"><i class="fa-solid fa-xmark text-red-500 mt-1"></i> Guessing at macros.</li>
+                    </ul>
+                </div>
+                <div class="p-8 border border-signal bg-gradient-to-b from-signal/10 to-transparent relative" data-aos="fade-left">
+                    <h3 class="font-display text-2xl text-white mb-6 flex items-center gap-3"><i class="fa-solid fa-bolt text-signal"></i> THE KINETIC WAY</h3>
+                    <ul class="space-y-4 font-mono text-sm text-white">
+                        <li class="flex gap-4 items-start"><i class="fa-solid fa-check text-signal mt-1"></i> 20m high-torque output.</li>
+                        <li class="flex gap-4 items-start"><i class="fa-solid fa-check text-signal mt-1"></i> Eat real food (Steak, Eggs, Fuel).</li>
+                        <li class="flex gap-4 items-start"><i class="fa-solid fa-check text-signal mt-1"></i> Data-driven biology.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="apply-now" class="py-24 bg-tech-grid relative overflow-hidden border-t border-signal/30">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-signal rounded-full blur-[200px] opacity-10 pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 relative z-10 max-w-5xl">
+            
+            <div class="text-center mb-12">
+                <h2 class="font-display text-5xl md:text-6xl text-white font-bold mb-4">UNLOCK THE BRIEFING</h2>
+                <p class="text-techGray font-mono">Enter your details to access the secure portal.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center bg-[#08090b] border border-white/10 p-8 md:p-12 shadow-2xl relative" data-aos="zoom-in">
+                
+                <div class="border-r border-white/10 pr-8 hidden md:block">
+                    <h3 class="font-display text-2xl text-white mb-6">WHAT YOU UNLOCK:</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-white/5 flex items-center justify-center border border-white/10 text-signal">
+                                <i class="fa-solid fa-play text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold font-display tracking-wide text-lg">THE 14-MINUTE VIDEO</h4>
+                                <p class="text-xs text-gray-400 font-mono mt-1">Full breakdown of the Metabolic Reconstruction mechanics. No fluff. Pure engineering.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-white/5 flex items-center justify-center border border-white/10 text-signal">
+                                <i class="fa-solid fa-file-pdf text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold font-display tracking-wide text-lg">THE 'SITTER'S SYNDROME' PDF</h4>
+                                <p class="text-xs text-gray-400 font-mono mt-1">Diagnostic checklist to see exactly how much damage desk work has done to your spine.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-white/5 flex items-center justify-center border border-white/10 text-signal">
+                                <i class="fa-solid fa-list-check text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold font-display tracking-wide text-lg">FULL PRICING & LOGISTICS</h4>
+                                <p class="text-xs text-gray-400 font-mono mt-1">Total transparency on how our 90-day system works, costs, and delivers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
+                        <span class="text-xs font-mono text-signal">/// ACCESS REQUEST</span>
+                        <div class="flex gap-1">
+                            <div class="w-2 h-2 rounded-full bg-signal animate-pulse"></div>
+                            <div class="w-2 h-2 rounded-full bg-white/20"></div>
+                        </div>
+                    </div>
+
+                    <form action="assessment.html" class="space-y-6">
+                        <div>
+                            <label class="block text-xs font-mono text-techGray mb-2 uppercase tracking-wider">Full Name</label>
+                            <input type="text" class="w-full input-tech p-4 text-white placeholder-white/20 text-lg" placeholder="ex: John Doe" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono text-techGray mb-2 uppercase tracking-wider">Primary Email</label>
+                            <input type="email" class="w-full input-tech p-4 text-white placeholder-white/20 text-lg" placeholder="ex: john@company.com" required>
+                        </div>
+                        
+                        <button type="submit" class="w-full btn-kinetic bg-signal text-white hover:bg-white hover:text-carbon px-8 py-5 font-display font-bold text-xl tracking-widest mt-4 shadow-[0_0_20px_rgba(255,69,0,0.3)]">
+                            SEND ME THE BRIEFING >
+                        </button>
+                        
+                        <p class="text-center text-white/30 text-[10px] font-mono mt-4">
+                            <i class="fa-solid fa-lock mr-1"></i> Your data is secure. We do not spam.
+                        </p>
+                    </form>
+                </div>
+
+                <div class="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-signal"></div>
+                <div class="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-signal"></div>
+                <div class="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-signal"></div>
+                <div class="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-signal"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-carbon border-t border-white/5 py-12 text-center">
+        <div class="text-gray-600 text-xs font-mono">
+            &copy; 2026 THE KINETIC PROTOCOL™. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50 });
+    </script>
+    
+    <script src="../funnel-nav.js"></script>
+</body>
+</html>

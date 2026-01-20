@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Are Confirmed | The Soul Alchemist</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* --- INHERITED DNA --- */
+        :root {
+            --bg-body: #F9F7F2;
+            --bg-card: #FFFFFF;
+            --text-primary: #4A4A4A;
+            --text-muted: #7A7A7A;
+            --text-gold: #C5A059;
+            --brand-primary: #8DA399;
+            --brand-glow: rgba(141, 163, 153, 0.2); 
+            --soft-shadow: 0 20px 60px -10px rgba(141, 163, 153, 0.15);
+            --border-radius: 30px;
+            --font-head: 'Playfair Display', serif; 
+            --font-body: 'Lato', sans-serif;
+        }
+
+        .main-wrapper {
+            width: 100%; max-width: 1600px; margin: 0 auto;
+            background: var(--bg-body); min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            padding: 4rem 2rem;
+        }
+
+        /* HEADER */
+        .confirmation-header { text-align: center; max-width: 800px; margin-bottom: 3rem; }
+        .status-icon { 
+            font-size: 4rem; color: var(--brand-primary); margin-bottom: 1.5rem; 
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+
+        h1 { font-family: var(--font-head); font-size: 3rem; color: var(--text-primary); margin-bottom: 1rem; }
+        p { color: var(--text-muted); font-size: 1.2rem; line-height: 1.6; font-family: var(--font-body); }
+
+        /* VIDEO CARD */
+        .video-card {
+            width: 100%; max-width: 900px;
+            background: var(--bg-card); padding: 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--soft-shadow);
+            margin-bottom: 3rem;
+        }
+        .video-embed {
+            width: 100%; aspect-ratio: 16/9; background: #000;
+            border-radius: calc(var(--border-radius) - 10px);
+            display: flex; align-items: center; justify-content: center; color: white;
+        }
+
+        /* STEPS GRID */
+        .steps-grid {
+            display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem;
+            max-width: 1000px; width: 100%;
+        }
+        .step-card {
+            background: var(--bg-card); padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center; border: 1px solid rgba(255,255,255,0.5);
+        }
+        .step-num { 
+            font-family: var(--font-head); font-size: 3rem; color: var(--bg-body); 
+            -webkit-text-stroke: 1px var(--text-gold); line-height: 1; margin-bottom: 1rem;
+        }
+        .step-title { font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; }
+        .step-desc { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* BUTTON */
+        .btn-brand {
+            display: inline-block; padding: 20px 50px; border-radius: 50px;
+            background: var(--brand-primary); color: white;
+            font-weight: 700; text-decoration: none; margin-top: 2rem;
+            letter-spacing: 2px; text-transform: uppercase;
+            box-shadow: var(--soft-shadow); transition: 0.5s;
+        }
+        .btn-brand:hover { transform: translateY(-3px); background: #9FB5AB; }
+
+        @media (max-width: 900px) {
+            .steps-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-wrapper">
+        
+        <div class="confirmation-header" data-aos="fade-down">
+            <div class="status-icon"><i class="fa-regular fa-circle-check"></i></div>
+            <h1>Your Space Is Held.</h1>
+            <p>
+                The calendar invite is in your inbox. You have taken a powerful step by choosing to pause and listen.
+                <br><br>
+                However, our call is not just a "chat." It is an alchemy session. <strong>To prepare your energy, please watch this short video from Sarah.</strong>
+            </p>
+        </div>
+
+        <div class="video-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="video-embed">
+                <div style="text-align: center;">
+                    <i class="fa-solid fa-play" style="font-size: 3rem; opacity: 0.8; margin-bottom: 1rem;"></i>
+                    <p style="font-family: var(--font-body);">Required Viewing: "The 3 Shift Protocol"</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="steps-grid">
+            <div class="step-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="step-num">01</div>
+                <div class="step-title">Check Your Email</div>
+                <div class="step-desc">I've sent you a "Preparation Journal." Please fill it out before we meet.</div>
+            </div>
+            <div class="step-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="step-num">02</div>
+                <div class="step-title">Block The Time</div>
+                <div class="step-desc">Ensure you are in a quiet, private space. No driving. No multi-tasking.</div>
+            </div>
+            <div class="step-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="step-num">03</div>
+                <div class="step-title">Show Up</div>
+                <div class="step-desc">I respect your time deeply. I ask that you respect mine with the same integrity.</div>
+            </div>
+        </div>
+
+        <a href="#" class="btn-brand">Add To Calendar</a>
+
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script> AOS.init({ duration: 1500, easing: 'ease-in-out-sine', once: true }); </script>
+</body>
+</html>
