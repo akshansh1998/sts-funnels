@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Executive Health | The Neuro-Resilience Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lumina: {
+                            cream: '#F9F7F2',
+                            sage: '#8A9A8A',
+                            charcoal: '#2C3333',
+                            gold: '#D4C4A8',
+                            goldHover: '#C4B498'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Lato', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-lumina-cream text-lumina-charcoal font-sans antialiased min-h-screen flex flex-col">
+
+    <nav class="w-full py-6 px-8 flex justify-center md:justify-start max-w-6xl mx-auto">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full border border-lumina-sage flex items-center justify-center">
+                <div class="w-4 h-4 bg-lumina-sage rounded-full opacity-50"></div>
+            </div>
+            <span class="font-serif text-xl tracking-wide text-lumina-charcoal">LUMINA</span>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex items-center justify-center px-6 py-12">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+            
+            <div class="space-y-8">
+                
+                <div class="inline-block border-b border-lumina-gold pb-1">
+                    <span class="text-xs uppercase tracking-[0.2em] text-lumina-sage font-bold">For Female Executives in Tech & Finance</span>
+                </div>
+
+                <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.15]">
+                    Why your <span class="italic text-lumina-sage">"High Performance"</span> is suddenly failing you.
+                </h1>
+
+                <p class="text-lg font-light leading-relaxed text-gray-600">
+                    It isn't a mindset issue. It’s a biological event. 
+                    <br><br>
+                    Discover the <strong class="text-lumina-charcoal">"Adrenal Wall"</strong> phenomenon that impacts 80% of C-Suite women—and the neuro-protocol to restore your energy without stepping down.
+                </p>
+
+                <div class="pt-4">
+                    <form action="./assessment.html" class="space-y-4 max-w-md">
+                        <div class="relative">
+                            <input type="email" placeholder="Enter your email address" required
+                                   class="w-full bg-white border border-lumina-sage/30 p-4 text-lumina-charcoal focus:outline-none focus:border-lumina-gold transition-colors placeholder-gray-400 font-light rounded-sm shadow-sm">
+                        </div>
+                        <button type="submit" 
+                                class="w-full bg-lumina-charcoal text-white hover:bg-lumina-sage transition-all duration-500 py-4 px-8 text-xs uppercase tracking-[0.2em] font-bold shadow-lg hover:shadow-xl hover:-translate-y-1">
+                            Access The Clinical Briefing
+                        </button>
+                    </form>
+                    <p class="text-[10px] text-gray-400 mt-3 tracking-wide">
+                        Backed by Neuro-Psychology. Delivered instantly.
+                    </p>
+                </div>
+
+                <div class="pt-8 flex flex-col gap-3 opacity-60">
+                    <p class="text-[10px] uppercase tracking-widest text-lumina-sage">Protocols used by leaders at:</p>
+                    <div class="flex gap-6 font-serif italic text-gray-400 text-sm">
+                        <span>Google</span>
+                        <span>Amazon</span>
+                        <span>Goldman Sachs</span>
+                        <span>Meta</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative h-[500px] md:h-[600px] w-full bg-white p-2 shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-700 ease-out rounded-sm">
+                <div class="absolute inset-0 bg-lumina-sage/10 z-10 pointer-events-none"></div>
+                
+                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2500&auto=format&fit=crop" 
+                     class="w-full h-full object-cover grayscale opacity-90 contrast-125">
+                
+                <div class="absolute bottom-8 left-8 z-20 bg-lumina-cream/90 backdrop-blur p-6 border-l-2 border-lumina-gold max-w-xs shadow-lg">
+                    <p class="font-serif italic text-lg mb-2">"The Vagal Reset"</p>
+                    <p class="text-xs font-light text-gray-600 leading-relaxed">
+                        Fig 1.1: Regulating the nervous system state from 'Sympathetic Overdrive' (Fight/Flight) to 'Parasympathetic Restoration'.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../funnel-nav.js"></script>
+</body>
+</html>

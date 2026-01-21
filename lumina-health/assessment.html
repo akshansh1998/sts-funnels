@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Executive Health | Clinical Next Steps</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lumina: {
+                            cream: '#F9F7F2',
+                            sage: '#8A9A8A',
+                            charcoal: '#2C3333',
+                            gold: '#D4C4A8',
+                            goldHover: '#C4B498'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Lato', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-lumina-cream text-lumina-charcoal font-sans antialiased min-h-screen flex flex-col items-center">
+
+    <div class="w-full h-1 bg-gray-200">
+        <div class="h-full bg-lumina-sage w-[50%]"></div>
+    </div>
+
+    <main class="w-full max-w-2xl mx-auto px-6 py-12 flex flex-col gap-10">
+        
+        <div class="text-center space-y-4">
+            <div class="inline-flex items-center gap-2 text-lumina-sage border border-lumina-sage/30 px-4 py-1 rounded-full bg-white">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span class="text-[10px] uppercase tracking-[0.2em] font-bold">Briefing Sent</span>
+            </div>
+            <h1 class="font-serif text-3xl md:text-4xl text-lumina-charcoal leading-tight">
+                Please check your inbox in <br> <span class="italic text-gray-400">approx. 3 minutes.</span>
+            </h1>
+            <p class="text-sm font-light text-gray-500 max-w-md mx-auto leading-relaxed">
+                The "Adrenal Reset" video has been dispatched. While the server processes your request, please watch this important message from Dr. Ross.
+            </p>
+        </div>
+
+        <div class="w-full bg-white p-4 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] rounded-sm rotate-1 hover:rotate-0 transition-transform duration-700 ease-out">
+            <div class="relative aspect-video bg-lumina-sage/20 group cursor-pointer overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2670&auto=format&fit=crop" 
+                     class="w-full h-full object-cover opacity-80 mix-blend-multiply hover:scale-105 transition-transform duration-1000">
+                
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-16 h-16 bg-white/80 backdrop-blur rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-xl">
+                        <svg class="w-5 h-5 text-lumina-sage ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 flex justify-between items-center px-2">
+                <span class="font-serif italic text-lg text-lumina-charcoal">"Why 'Self-Care' is failing you"</span>
+                <span class="text-[10px] uppercase tracking-widest text-gray-400">02:14</span>
+            </div>
+        </div>
+
+        <div class="prose prose-stone prose-sm mx-auto text-gray-600 leading-relaxed text-center font-light max-w-lg">
+            <p>
+                <strong class="text-lumina-charcoal font-bold">The Hard Truth:</strong> You cannot "mindset" your way out of biological collapse.
+            </p>
+            <p>
+                Most executives try to fix burnout with vacations or meditation apps. But if your cortisol rhythm is inverted, rest won't work. You need a neurological reset, not a spa day.
+            </p>
+            <p>
+                If you are ready to stop guessing and start engineering your recovery with data...
+            </p>
+        </div>
+
+        <div class="bg-yellow-50 border-l-2 border-yellow-400 p-4 mx-auto w-full text-left max-w-lg">
+            <p class="text-yellow-600 text-[10px] font-bold uppercase tracking-widest mb-1">Demo Note:</p>
+            <p class="text-yellow-700 text-xs leading-relaxed font-light">
+                In a live funnel, this button would trigger a "Health History Application" (Typeform). For this simulation, we are skipping the application and taking you directly to the Protocol/Sales Page.
+            </p>
+        </div>
+
+        <div class="text-center">
+            <a href="./sales.html" class="inline-block group relative">
+                <div class="absolute inset-0 bg-lumina-sage/30 translate-y-2 translate-x-2 transition-transform group-hover:translate-y-3 group-hover:translate-x-3 rounded-sm"></div>
+                <div class="relative bg-lumina-charcoal text-white py-4 px-10 flex items-center gap-3 transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 shadow-xl">
+                    <span class="text-xs uppercase tracking-[0.2em] font-bold">
+                        View The Protocol
+                    </span>
+                    <svg class="w-4 h-4 text-lumina-gold group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </div>
+            </a>
+        </div>
+
+        <div class="text-center pt-8 border-t border-gray-100 w-full">
+            <p class="text-[10px] text-gray-400 uppercase tracking-widest">Lumina Executive Health &copy; 2026</p>
+        </div>
+
+    </main>
+
+    <script src="../funnel-nav.js"></script>
+</body>
+</html>

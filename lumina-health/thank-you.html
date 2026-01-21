@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Executive Health | Confirmed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lumina: {
+                            cream: '#F9F7F2',
+                            sage: '#8A9A8A',
+                            charcoal: '#2C3333',
+                            gold: '#D4C4A8',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Lato', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-lumina-cream text-lumina-charcoal font-sans antialiased min-h-screen flex flex-col items-center justify-center">
+
+    <main class="w-full max-w-3xl mx-auto px-6 py-12 text-center">
+        
+        <div class="mb-8 inline-block p-4 rounded-full bg-white shadow-sm border border-lumina-gold/30">
+            <svg class="w-8 h-8 text-lumina-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"></path></svg>
+        </div>
+
+        <h1 class="font-serif text-4xl md:text-5xl mb-6">
+            Intake Confirmed.
+        </h1>
+        <p class="font-light text-gray-500 text-lg max-w-lg mx-auto leading-relaxed mb-12">
+            We have reserved this time exclusively for you. Please check your email for the calendar invitation and secure Zoom link.
+        </p>
+
+        <div class="bg-white p-10 shadow-xl border-t-4 border-lumina-sage max-w-2xl mx-auto text-left relative">
+            
+            <span class="absolute top-0 right-0 bg-lumina-sage text-white text-[10px] uppercase tracking-widest px-3 py-1 font-bold">Required</span>
+
+            <h3 class="font-serif text-2xl mb-6">Before we speak:</h3>
+            
+            <div class="space-y-8">
+                <div class="flex gap-5">
+                    <span class="font-serif text-4xl text-lumina-gold/50">01</span>
+                    <div>
+                        <h4 class="font-bold text-sm uppercase tracking-wide mb-1">The Stress Inventory</h4>
+                        <p class="text-sm font-light text-gray-500 leading-relaxed">
+                            I have sent a secure form to your inbox. It asks specifically about your sleep patterns, caffeine intake, and symptom frequency. Please complete this 24 hours before our call so Dr. Ross can review it.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex gap-5">
+                    <span class="font-serif text-4xl text-lumina-gold/50">02</span>
+                    <div>
+                        <h4 class="font-bold text-sm uppercase tracking-wide mb-1">Environment Check</h4>
+                        <p class="text-sm font-light text-gray-500 leading-relaxed">
+                            Please ensure you are in a quiet, private space for our call. We will be discussing sensitive health information. Do not take this call from your car or an open office.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 pt-8 border-t border-gray-100 flex justify-center">
+                <a href="#" class="text-xs uppercase tracking-[0.2em] text-lumina-sage hover:text-lumina-charcoal transition-colors font-bold border-b border-lumina-sage/30 pb-1">
+                    Add to Google Calendar
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-12 opacity-40 hover:opacity-100 transition-opacity">
+            <a href="./index.html" class="text-[10px] uppercase tracking-widest text-gray-500">
+                Return to Homepage
+            </a>
+        </div>
+
+    </main>
+
+    <script src="../funnel-nav.js"></script>
+</body>
+</html>
