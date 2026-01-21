@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IronClad Financials | The Margin Armor Protocol</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        iron: {
+                            dark: '#1a1a1a', // Darker concrete
+                            base: '#2A2A2A', // Standard concrete
+                            light: '#3d3d3d',
+                            text: '#F5F5F5'
+                        },
+                        safety: {
+                            orange: '#FF5722', // High Vis
+                            hover: '#E64A19'
+                        },
+                        blueprint: '#15202B'
+                    },
+                    fontFamily: {
+                        display: ['Oswald', 'sans-serif'],
+                        mono: ['Roboto Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-iron-dark text-iron-text font-mono antialiased min-h-screen flex flex-col">
+
+    <nav class="w-full border-b border-white/10 bg-iron-dark/95 backdrop-blur fixed top-0 z-50">
+        <div class="max-w-xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-safety-orange flex items-center justify-center font-display font-bold text-iron-dark text-xl">I</div>
+                <span class="font-display font-bold tracking-wider text-lg">IRONCLAD</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-24 pb-12 px-6">
+        <div class="max-w-xl mx-auto space-y-8">
+            
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-sm">
+                <div class="w-2 h-2 rounded-full bg-safety-orange animate-pulse"></div>
+                <span class="text-xs uppercase tracking-widest text-gray-400">For G.C.s & Builders doing $3M+</span>
+            </div>
+
+            <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight uppercase">
+                Stop Running <span class="text-safety-orange">"Busy But Broke"</span> Job Sites.
+            </h1>
+
+            <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                You’re winning the bids, but the bank account isn't growing. 
+                Get the <span class="text-white font-bold">"Profit Leak Inspection"</span> video training. I’ll show you exactly where your margins are bleeding out between the estimate and the final invoice.
+            </p>
+
+            <div class="relative w-full aspect-video bg-blueprint border border-white/20 rounded-sm overflow-hidden group cursor-pointer shadow-2xl shadow-black/50">
+                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2670&auto=format&fit=crop" 
+                     class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700 grayscale mix-blend-luminosity">
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-iron-dark via-transparent to-transparent"></div>
+                
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-16 h-16 bg-safety-orange rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-orange-500/20">
+                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                </div>
+
+                <div class="absolute bottom-4 left-4 bg-black/80 px-2 py-1 text-[10px] uppercase tracking-wider border border-white/10">
+                    Warning: Brutal Honesty Inside
+                </div>
+            </div>
+
+            <div class="bg-iron-base border border-white/10 p-6 rounded-sm shadow-xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-1 h-full bg-safety-orange"></div>
+                
+                <h3 class="font-display text-xl mb-4 uppercase">Inspect Your Systems</h3>
+                
+                <form action="./assessment.html" class="space-y-4">
+                    <div>
+                        <input type="email" placeholder="Enter your work email..." required
+                               class="w-full bg-iron-dark border border-white/20 p-4 text-sm focus:outline-none focus:border-safety-orange transition-colors placeholder-gray-600 text-white rounded-sm">
+                    </div>
+                    <button type="submit" 
+                            class="w-full bg-safety-orange hover:bg-safety-hover text-white font-display font-bold uppercase tracking-widest py-4 transition-all hover:shadow-[0_0_20px_rgba(255,87,34,0.3)] text-sm">
+                        Access The Training
+                    </button>
+                    <p class="text-[10px] text-center text-gray-500">
+                        Sent directly to your inbox. No fluff. 100% Secure.
+                    </p>
+                </form>
+            </div>
+
+            <div class="border-t border-white/10 pt-6 flex items-center justify-between opacity-60">
+                <div class="flex -space-x-2">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" class="w-8 h-8 rounded-full border-2 border-iron-dark grayscale">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" class="w-8 h-8 rounded-full border-2 border-iron-dark grayscale">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" class="w-8 h-8 rounded-full border-2 border-iron-dark grayscale">
+                </div>
+                <p class="text-[10px] uppercase tracking-wider">Trusted by 40+ Firms</p>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../funnel-nav.js"></script>
+</body>
+</html>

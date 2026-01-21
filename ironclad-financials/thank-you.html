@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IronClad Financials | Confirmed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        iron: {
+                            dark: '#1a1a1a', 
+                            base: '#2A2A2A', 
+                            light: '#3d3d3d',
+                            text: '#F5F5F5'
+                        },
+                        safety: {
+                            orange: '#FF5722', 
+                            hover: '#E64A19'
+                        },
+                        blueprint: '#15202B'
+                    },
+                    fontFamily: {
+                        display: ['Oswald', 'sans-serif'],
+                        mono: ['Roboto Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-iron-dark text-iron-text font-mono antialiased min-h-screen flex flex-col items-center justify-center">
+
+    <main class="w-full max-w-2xl mx-auto px-6 py-12">
+        
+        <div class="flex justify-center mb-8">
+            <div class="w-20 h-20 bg-green-900/20 border-2 border-green-500 rounded-full flex items-center justify-center">
+                <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+        </div>
+
+        <div class="text-center mb-12">
+            <h1 class="font-display text-4xl md:text-5xl font-bold uppercase leading-tight mb-4">
+                Audit Scheduled.
+            </h1>
+            <p class="text-gray-400 text-sm max-w-md mx-auto">
+                Your time slot is locked. An invitation has been sent to your email.
+            </p>
+        </div>
+
+        <div class="bg-iron-base border border-white/10 p-8 rounded-sm shadow-xl relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-safety-orange to-transparent"></div>
+            
+            <h3 class="font-display text-xl text-white uppercase mb-6 text-center">Required Preparation</h3>
+            
+            <div class="space-y-6">
+                <div class="flex gap-4">
+                    <div class="w-8 h-8 flex-shrink-0 bg-iron-dark border border-white/20 flex items-center justify-center font-bold text-safety-orange">1</div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm uppercase">Check Your Email</h4>
+                        <p class="text-xs text-gray-500 mt-1">Accept the calendar invite. If you decline or don't show, you are blacklisted from future audits.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="w-8 h-8 flex-shrink-0 bg-iron-dark border border-white/20 flex items-center justify-center font-bold text-safety-orange">2</div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm uppercase">Prepare Your Numbers</h4>
+                        <p class="text-xs text-gray-500 mt-1">Please have your <span class="text-white">Profit & Loss (P&L)</span> statement from last month open on your screen during the call.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="w-8 h-8 flex-shrink-0 bg-iron-dark border border-white/20 flex items-center justify-center font-bold text-safety-orange">3</div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm uppercase">Watch The Primer</h4>
+                        <p class="text-xs text-gray-500 mt-1">I recorded a 4-minute video explaining how to read your P&L before we talk. It's in your email.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-white/5 text-center">
+                <a href="#" class="inline-block text-[10px] uppercase tracking-widest text-safety-orange border-b border-safety-orange/50 hover:text-white transition-colors">
+                    Add to Google Calendar
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center mt-12 opacity-50 hover:opacity-100 transition-opacity">
+            <a href="./index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white">
+                &larr; Return to Home
+            </a>
+        </div>
+
+    </main>
+
+    <script src="../funnel-nav.js"></script>
+</body>
+</html>
