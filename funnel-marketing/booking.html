@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Access | Funnel Forge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: '#050505',
+                        surface: '#121212',
+                        primary: '#2563EB',
+                        text: '#E5E5E5',
+                        muted: '#A3A3A3',
+                        border: '#FFFFFF10'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: #E5E5E5; font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-12 px-4">
+
+    <div class="mb-12 opacity-50 flex items-center gap-2">
+        <div class="h-6 w-6 bg-primary rounded-sm flex items-center justify-center font-bold text-xs text-white">F</div>
+        <span class="font-display font-bold text-lg">Funnel Forge</span>
+    </div>
+
+    <main class="w-full max-w-5xl grid md:grid-cols-2 gap-12 items-start">
+        
+        <div>
+            <div class="inline-block border border-border bg-surface px-3 py-1 rounded-full text-xs font-mono text-primary mb-6">
+                STEP 3 OF 3: APPLICATION
+            </div>
+            <h1 class="text-3xl md:text-4xl font-display font-bold text-white mb-6">
+                APPLY FOR THE <br>ACCELERATOR.
+            </h1>
+            <p class="text-muted leading-relaxed mb-8">
+                This is a <strong>6-Week Consulting & Implementation Program</strong>, not a cheap video course. We work directly with you to restructure your agency's pricing, positioning, and technical stack.
+            </p>
+            
+            <div class="space-y-6">
+                <div class="flex gap-4">
+                    <div class="w-1 h-full bg-primary/20 rounded-full"></div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm uppercase tracking-wide">Who this is for:</h4>
+                        <p class="text-sm text-gray-400 mt-1">Designers & Agency Owners doing $2k-$5k/mo who want to scale to $15k+.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-1 h-full bg-primary/20 rounded-full"></div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm uppercase tracking-wide">The Commitment:</h4>
+                        <p class="text-sm text-gray-400 mt-1">You must be willing to adopt our "Component Library" and stop building from scratch.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 p-6 bg-surface border border-border rounded-lg">
+                <p class="text-sm text-gray-300 italic mb-4">"I was skeptical that a 'system' could fix my creative burnout. But standardizing my deliverables literally saved my business. I work half the hours now."</p>
+                <div class="text-xs font-bold text-white">— Alex T., UI Designer</div>
+            </div>
+        </div>
+
+        <div class="bg-surface border border-border rounded-xl p-6 md:p-8 shadow-2xl">
+            <div class="text-center mb-6">
+                <h3 class="text-xl font-bold text-white">Select a Time</h3>
+                <p class="text-xs text-muted">Strategy Session (30 Min)</p>
+            </div>
+            
+            <div class="bg-bg border border-border rounded-lg p-4 aspect-square flex items-center justify-center relative overflow-hidden group">
+                <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
+                <div class="text-center">
+                    <svg class="w-12 h-12 text-primary mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    <p class="text-sm text-gray-500 font-mono mb-4">[CALENDLY WIDGET LOADS HERE]</p>
+                    <a href="thank-you.html" class="inline-block bg-primary hover:bg-blue-600 text-white font-bold text-sm px-6 py-3 rounded-sm transition">
+                        SIMULATE: BOOKING CONFIRMED
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-4 flex justify-center gap-4 text-xs text-muted">
+                <span class="flex items-center gap-1"><div class="w-2 h-2 bg-green-500 rounded-full"></div> Available</span>
+                <span class="flex items-center gap-1"><div class="w-2 h-2 bg-gray-700 rounded-full"></div> Booked</span>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="../funnel-nav.js"></script>
+</body>
+</html>
